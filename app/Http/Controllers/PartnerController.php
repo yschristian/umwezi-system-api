@@ -42,11 +42,9 @@ class PartnerController extends Controller
     }
 
     public function update(Request $request,$id){
-        // $partner = Partner::find($id);
-        // $input = $request->all();
-        // $partner = update($input);
-        $partner = Request::Where($id);
-        $partner->update([ 'LastName' => $request['LastName'],]);
+        $partner = Partner::find($id);
+        $input = $request->all();
+        $partner -> update($input);
         return $partner;
     }
 }
