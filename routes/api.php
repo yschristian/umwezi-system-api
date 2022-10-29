@@ -21,10 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('user')->group(function(){
 
 Route::get("/getAll",[\App\Http\Controllers\Usercontroller::class, 'index']);
-Route::get("/users/{user}",[\App\Http\Controllers\Usercontroller::class, 'show']);
+Route::get("/getone/{user}",[\App\Http\Controllers\Usercontroller::class, 'show']);
 Route::post("/create",[\App\Http\Controllers\Usercontroller::class, 'store']);
-Route::patch("/users/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
-Route::delete("/users/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
+Route::patch("/update/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
+Route::delete("/delete/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
 
 });
 //requests
