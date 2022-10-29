@@ -38,3 +38,7 @@ Route::prefix('request')->group(function(){
     
 });
 
+// products
+Route::prefix('product')->group(function(){
+    Route::post("/create",[\App\Http\Controllers\ProductController::class, 'store']);
+});
