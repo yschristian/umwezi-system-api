@@ -22,6 +22,24 @@ class Usercontroller extends Controller
 
     }
 
+    public function login(Request $request){
+
+        $loginUser = $request-> validate([
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+        $user = User :: where('email', $loginUser['email'])-> first();
+        if(!$user || !Hash:: check($loginUser['password'], $user -> password)){
+            return response(["message"=>"wrong credentials"],401);
+        };
+        $token = $user -> createToken('umwezi')->plainTextToken;
+        $response=[
+            "user"=>$user,
+            "token"=>$token
+        ];
+        return response($response ,200);
+    }
+
     public function index(){
 
         $users = User::all();
@@ -33,10 +51,6 @@ class Usercontroller extends Controller
         return $user;
     }
 
-    // public function edit($id){
-    //     $user = User::find($id);
-    //     return view ('users.edit')->with('user',$user);
-    // }
     public function destroy($id){
         $user = User::destroy($id);
         return $user;
