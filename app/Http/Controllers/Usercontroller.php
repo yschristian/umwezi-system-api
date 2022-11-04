@@ -22,6 +22,11 @@ class Usercontroller extends Controller
 
     }
 
+    public function login(Request $request){
+
+        $loginUser;
+    }
+
     public function index(){
 
         $users = User::all();
@@ -33,10 +38,6 @@ class Usercontroller extends Controller
         return $user;
     }
 
-    // public function edit($id){
-    //     $user = User::find($id);
-    //     return view ('users.edit')->with('user',$user);
-    // }
     public function destroy($id){
         $user = User::destroy($id);
         return $user;
