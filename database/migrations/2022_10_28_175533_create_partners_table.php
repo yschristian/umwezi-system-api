@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('FirstName');
             $table->string('LastName');
             $table->string('Email');
-            $table->string('Option',['salesPerson','farmer']);
+            $table->string('Option');
             $table->string('Description');
             $table->timestamps();
         });

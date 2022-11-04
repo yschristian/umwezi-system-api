@@ -24,7 +24,20 @@ class Usercontroller extends Controller
 
     public function login(Request $request){
 
-        $loginUser;
+        $loginUser = $request-> validate([
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+        $user = User :: where('email', $loginUser['email'])-> first();
+        if(!$user || !Hash:: check($loginUser['password'], $user -> password)){
+            return response(["message"=>"wrong credentials"],401);
+        };
+        $token = $user -> createToken('umwezi')->plainTextToken;
+        $response=[
+            "user"=>$user,
+            "token"=>$token
+        ];
+        return response($response ,200);
     }
 
     public function index(){
