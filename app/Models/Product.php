@@ -16,4 +16,7 @@ class Product extends Model
             'Price',
             'Address'
     ];
+    // public function user(){
+    //     return $this-> belongsTo(User::class,'foreign_key');
+    // }
 }
