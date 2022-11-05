@@ -14,9 +14,10 @@ class Product extends Model
             'Image',
             'Categories',
             'Price',
-            'Address'
+            'Address',
+            'user_id'
     ];
-    // public function user(){
-    //     return $this-> belongsTo(User::class,'foreign_key');
-    // }
+    public function user(){
+        return $this-> belongsTo(User::class);
+    }
 }

@@ -36,4 +36,5 @@ Route::prefix('product')->group(function(){
     Route::get("/getOne/{product}",[\App\Http\Controllers\ProductController::class, 'show']);
     Route::delete("/delete/{product}",[\App\Http\Controllers\ProductController::class, 'destroy']);
     Route::patch("/update/{product}",[\App\Http\Controllers\ProductController::class, 'update']);
+    Route::get("/userProduct/{product}",[\App\Http\Controllers\ProductController::class, 'update']);
 });

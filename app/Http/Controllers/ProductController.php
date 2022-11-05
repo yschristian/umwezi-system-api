@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\User;
 
 class ProductController extends Controller
-{
-    
+{   
     public function store(Request $request){
 
         $imageUrl = cloudinary()->upload($request->file('Image')->getRealPath())->getSecurePath();
@@ -17,7 +17,8 @@ class ProductController extends Controller
             'Image' => $imageUrl,
             'Categories' => $request -> Categories,
             'Price' =>$request -> Price,
-            'Address'=>$request -> Address
+            'Address'=>$request -> Address,
+            'user_id'=>$request -> user_id,
         ]);
         return $product;
     }
@@ -45,4 +46,11 @@ class ProductController extends Controller
         return $product;
     }
 
+    public function getUserProduct($userId){
+        $products = User::find($userId)->produts;
+        foreach($products as $product){
+          $product = Product::all();
+          return $product;
+        }
+    }
 }

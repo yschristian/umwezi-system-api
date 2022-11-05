@@ -20,8 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'username',
         'email',
-        'password',
-        'role'
+        'password'
     ];
 
     /**
@@ -43,7 +42,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function product(){
-    //     return $this-> hasMany(Product::class);
-    // }
+    public function product(){
+        return $this-> hasMany(Product::class);
+    }
 }

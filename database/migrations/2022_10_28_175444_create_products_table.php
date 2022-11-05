@@ -21,7 +21,9 @@ return new class extends Migration
             $table->string('Categories');
             $table->string('Price');
             $table->string('Address');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
