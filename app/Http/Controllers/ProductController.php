@@ -3,17 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Product;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     
-    public function store(Product $request){
-        
+    public function store(Request $request){
+
+        $imageUrl = cloudinary()->upload($request->file('Image')->getRealPath())->getSecurePath();
         $product = Product::create([
             'Title' => $request -> Title,
             'Description' => $request -> Description,
-            'Image' => $request -> Image,
+            'Image' => $imageUrl,
             'Categories' => $request -> Categories,
             'Price' =>$request -> Price,
             'Address'=>$request -> Address
@@ -21,9 +22,27 @@ class ProductController extends Controller
         return $product;
     }
 
-    // public function index(){
+    public function index(){
+        $products = Product::all();
+        return $products;
+    }
+    
+    public function show($id){
+        $product = Product::find($id);
+        return $product;
+    }
 
-    //     $product = Product::
-    // }
+    public function destroy($id){
+        $user = Product::destroy($id);
+        $response="product deleted";
+        return response($user);
+    }
+
+    public function update(Request $request,$id){
+        $product = Product::find($id);
+        $input = $request->all();
+        $product-> update($input);
+        return $product;
+    }
 
 }
