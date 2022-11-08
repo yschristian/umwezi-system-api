@@ -38,3 +38,8 @@ Route::prefix('product')->group(function(){
     Route::patch("/update/{product}",[\App\Http\Controllers\ProductController::class, 'update']);
     Route::get("/userProduct/{product}",[\App\Http\Controllers\ProductController::class, 'update']);
 });
+
+//order 
+Route::prefix('order')->group(function(){
+    Route::post("/create",[\App\Http\Controllers\orderController::class, 'store']);
+});

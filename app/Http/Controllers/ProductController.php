@@ -10,11 +10,12 @@ class ProductController extends Controller
 {   
     public function store(Request $request){
 
-        $imageUrl = cloudinary()->upload($request->file('Image')->getRealPath())->getSecurePath();
+        // $imageUrl = cloudinary()->upload($request->file('Image')->getRealPath())->getSecurePath();
         $product = Product::create([
             'Title' => $request -> Title,
             'Description' => $request -> Description,
-            'Image' => $imageUrl,
+            'Image' => $request -> Image,
+            // 'Image' => $imageUrl,
             'Categories' => $request -> Categories,
             'Price' =>$request -> Price,
             'Address'=>$request -> Address,
