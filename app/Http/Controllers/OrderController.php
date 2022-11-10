@@ -4,25 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
-
+use App\Models\User;
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $createOrder = Order::create([
@@ -36,38 +20,33 @@ class OrderController extends Controller
         return $createOrder;
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function index(){
+        $orders = Order::all();
+        return $orders;
+    }
+    
+    public function show($id){
+        $order = Order::find($id);
+        return $order;
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function destroy($id){
+        $order = Order::destroy($id);
+        return $order;
     }
+    
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function update(Request $request,$id){
+        $order = Order::find($id);
+        $input = $request->all();
+        $order-> update($input);
+        return $order;
+    }
+    public function UserOrder($userId){
+        $orders = User::find($userId)-> orders;
+        foreach($orders as $order){
+            $orders = Order::all();
+            return $orders;
+          }
     }
 }

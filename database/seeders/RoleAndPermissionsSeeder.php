@@ -27,6 +27,7 @@ class RoleAndPermissionsSeeder extends Seeder
         Permission ::create(['name'=> $CreateProduct]);
         Permission ::create(['name'=> $getAllProduct]);
         permission ::create(['name'=> $getAllUser]);
+
         //Define roles Available
         $admin = 'admin';
         $farmer = 'farmer';
