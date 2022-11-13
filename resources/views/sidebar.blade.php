@@ -39,9 +39,15 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/user/getAll">
 					<i class='bx bxs-group' ></i>
-					<span class="text">all users</span>
+					<span class="text">All Users</span>
+				</a>
+			</li>
+			<li>
+				<a href="/request/getAll">
+					<i class='bx bxs-group' ></i>
+					<span class="text">Partners</span>
 				</a>
 			</li>
 			<li>
@@ -54,12 +60,6 @@
 				<a href="#">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Message</span>
-				</a>
-			</li>
-			<li>
-				<a href="/request/getAll">
-					<i class='bx bxs-group' ></i>
-					<span class="text">Partners</span>
 				</a>
 			</li>
 		</ul>

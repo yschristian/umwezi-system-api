@@ -76,7 +76,7 @@
         <h3>Create Product</h3>
     </div>
 	<div class="card">
-		<form class="card-form" action="{{url('/request/create')}}" method="POST">
+		<form class="card-form" action="{{url('/request/create')}}" method="GET">
             {{csrf_field()}}
         <div class="input">
 				<input type="file" class="input-field" placeholder="FirstName" required/>

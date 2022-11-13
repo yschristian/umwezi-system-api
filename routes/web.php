@@ -31,3 +31,14 @@ Route::prefix('order')->group(function(){
     Route::patch("/update/{order}",[\App\Http\Controllers\orderController::class, 'update']);
     Route::get("/userOrder/{order}",[\App\Http\Controllers\orderController::class, 'UserOrder']);
 });
+
+Route::prefix('user')->group(function(){
+
+    Route::get("/getAll",[\App\Http\Controllers\Usercontroller::class, 'index']);
+    Route::get("/getone/{user}",[\App\Http\Controllers\Usercontroller::class, 'show']);
+    Route::post("/create",[\App\Http\Controllers\Usercontroller::class, 'store']);
+    Route::patch("/update/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
+    Route::delete("/delete/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
+    Route::post("/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
+    
+    });

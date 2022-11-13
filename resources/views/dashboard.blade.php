@@ -52,50 +52,26 @@
 						<thead>
 							<tr>
 								<th>User</th>
-								<th>Date Order</th>
+								<th>Product</th>
 								<th>Status</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
+									<img src="img/test.jpeg">
+									<p>umuhoza</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>rice</td>
 								<td><span class="status completed">Completed</span></td>
 							</tr>
 							<tr>
 								<td>
 									<img src="img/people.png">
-									<p>John Doe</p>
+									<p>shema</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>mango</td>
 								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status process">Process</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status pending">Pending</span></td>
-							</tr>
-							<tr>
-								<td>
-									<img src="img/people.png">
-									<p>John Doe</p>
-								</td>
-								<td>01-10-2021</td>
-								<td><span class="status completed">Completed</span></td>
 							</tr>
 						</tbody>
 					</table>

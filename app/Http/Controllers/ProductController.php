@@ -22,8 +22,8 @@ class ProductController extends Controller
             'Address'=>$request -> Address,
             'user_id'=>$request -> user_id,
         ]);
-        // return $product;
-        return view('product')->with('product',$product);
+        return $product;
+        // return view('product')->with('product',$product);
     }
 
     public function index(){

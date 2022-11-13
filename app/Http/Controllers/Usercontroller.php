@@ -11,12 +11,14 @@ class Usercontroller extends Controller
 {
     //
     public function store(Request $request){
+
         $createUser = User::create([
             'username'=>$request->username,
             'email'=>$request->email, 
             'password'=>Hash::make($request->password)
         ]);
-        return $createUser;
+        // return $createUser;
+        return view('user')->with('user',$createUser);
     }
 
     public function login(Request $request){
@@ -41,7 +43,8 @@ class Usercontroller extends Controller
 
         $users = User::all();
         // return $users;
-        return response(["message"=>"all users",$users], 201);
+        // return response(["message"=>"all users",$users], 201);
+        return view('user')->with('user', $users);
     }
     
     public function show($id){

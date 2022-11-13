@@ -57,6 +57,7 @@
                                 <th>Categories</th>
                                 <th>Price</th>
                                 <th>Address</th>
+								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -69,6 +70,9 @@
                                 <td>descr</td>
                                 <td>categories</td>
                                 <td>price</td>
+								<td>
+									<a href="#" class="btn">View</a>
+								</td>
 							</tr>
                             <tr>
 								<td>
@@ -79,6 +83,9 @@
                                 <td>descr</td>
                                 <td>categories</td>
                                 <td>price</td>
+								<td>
+									<a href="#" class="btn">View</a>
+								</td>
 							</tr>
 						</tbody>
 					</table>
