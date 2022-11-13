@@ -53,7 +53,7 @@
 								<th>LastName</th>
 								<th>Email</th>
                                 <th>Option</th>
-                                <th>Description</th>
+								<th>Actions</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -63,7 +63,9 @@
 								<td>{{$partner -> LastName}}</td>
                                 <td>{{$partner -> Email}}</td>
                                 <td>{{$partner -> Option}}</td>
-                                <td>{{$partner -> Description}}</td>
+								<td>
+                                    <a href="#" class="btn">View</a>
+								</td>
 							</tr>
 							@endforeach
 						</tbody>
@@ -73,25 +75,32 @@
  <div class="todo">
 	<!-- code here -->
     <div class="head">
-        <h3>Create Product</h3>
+        <h3>Create Partners</h3>
     </div>
 	<div class="card">
-		<form class="card-form" action="{{url('/request/create')}}" method="GET">
+		<form class="card-form" action="{{url('/request/create')}}" method="POST">
             {{csrf_field()}}
         <div class="input">
-				<input type="file" class="input-field" placeholder="FirstName" required/>
+				<input type="text" name="FirstName" class="input-field" placeholder="FirstName" required/>
 			</div>
 			<div class="input">
-				<input type="text" class="input-field" placeholder="LastName" required/>
+				<input type="text" name="LastName" class="input-field" placeholder="LastName" required/>
 			</div>
 			<div class="input">
-				<input type="text" class="input-field" placeholder="Email" required/>
+				<input type="text" name="Email" class="input-field" placeholder="Email" required/>
 			</div>
             <div class="input">
-				<input type="text" class="input-field" placeholder="Options" required/>
+				<select name="Option">
+					@foreach($roles as $role)
+					<!-- <input type="text" name="Option" class="input-field" placeholder="Options" required/> -->
+					<option value= "{{$role->name}}">{{$role->name}}</option>
+					@endforeach
+				</select>
+				<label for="permissions">role:</label>
+					
 			</div>
             <div class="input">
-				<input type="text" class="input-field" placeholder="Description" required/>
+				<input type="text" name="Description" class="input-field" placeholder="Description" required/>
 			</div>
 			<div class="action">
 				<button class="action-button">create</button>

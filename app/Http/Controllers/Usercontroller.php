@@ -44,7 +44,7 @@ class Usercontroller extends Controller
         $users = User::all();
         // return $users;
         // return response(["message"=>"all users",$users], 201);
-        return view('user')->with('user', $users);
+        return view('user')->with('users', $users);
     }
     
     public function show($id){

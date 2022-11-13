@@ -6,6 +6,8 @@ use App\Models\Partner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Str;
 
 class PartnerController extends Controller
@@ -13,21 +15,23 @@ class PartnerController extends Controller
     //
     public function store(Request $request){
 
-        $createPatner = Partner::create([
+        $partner = Partner::create([
             'FirstName'=>$request->FirstName,
             'LastName'=> $request-> LastName,
             'Email'=>$request->Email,
             'Option'=>$request->Option,
             'Description'=>$request->Description
         ]);
-        // return $createPatner;
-        return view('partners')->with('partners',$createPatner);
+        $partner->assignRole("admin");
+         return $request->Option;
+        //return view('partner')->with('partners',$partner);
     }
     public function index(){
-
         $partners = Partner::all();
+        $role = Role::all();
         // return $partners;
-        return view('partners')->with('partners',$partners);
+        //return $role;
+        return view('partner')->with('partners',$partners)->with('roles',$role);
     }
     
     public function show($id){
