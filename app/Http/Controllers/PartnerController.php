@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Partner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use Illuminate\Support\Str;
 
 class PartnerController extends Controller
 {
@@ -17,12 +20,14 @@ class PartnerController extends Controller
             'Option'=>$request->Option,
             'Description'=>$request->Description
         ]);
-        return $createPatner;
+        // return $createPatner;
+        return view('partners')->with('partners',$createPatner);
     }
     public function index(){
 
         $partners = Partner::all();
-        return $partners;
+        // return $partners;
+        return view('partners')->with('partners',$partners);
     }
     
     public function show($id){
@@ -47,4 +52,21 @@ class PartnerController extends Controller
         $partner -> update($input);
         return $partner;
     }
+    public function approve(Request $request,$id){
+        $patner = Partner::find($id)-> partners;
+        $item =  $request->all();
+        $hashed_random_password = Hash::make(str::random(8));
+
+        if($item){
+            $user = User::create([
+                "username" => $item->FirstName,
+                "email" => $item->Email,
+                "password"=>$hashed_random_password,
+            ]);
+            return response(["message"=>"user approved",$user], 201);
+          
+        }
+        
+    }
+
 }
