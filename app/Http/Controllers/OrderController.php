@@ -4,11 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
-<<<<<<< HEAD
-
-=======
 use App\Models\User;
->>>>>>> f5bb6957b39aa4fa35f8f9f7e70c95b579973614
 class OrderController extends Controller
 {
     public function store(Request $request)
@@ -21,30 +17,19 @@ class OrderController extends Controller
             'address'=>$request->address,
             'status' => $request -> status
         ]);
-        return $createOrder;
+        // return $createOrder;
+        return view('order')->with('order', $createOrder);
     }
 
-<<<<<<< HEAD
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-=======
     public function index(){
         $orders = Order::all();
-        return $orders;
+        // return $orders;
+        return view('order')->with('order',$orders);
     }
     
     public function show($id){
         $order = Order::find($id);
         return $order;
->>>>>>> f5bb6957b39aa4fa35f8f9f7e70c95b579973614
     }
 
     public function destroy($id){
