@@ -26,10 +26,12 @@ Route::prefix('request')->group(function(){
     Route::get("/getOne/{request}",[\App\Http\Controllers\PartnerController::class, 'show']);
     Route::patch("/update/{request}",[\App\Http\Controllers\PartnerController::class, 'update']);
     Route::delete("/delete/{request}",[\App\Http\Controllers\PartnerController::class, 'destroy']);
+    Route::post("/approve/{request}",[\App\Http\Controllers\PartnerController::class, 'approve']);
     
 });
 
 // products
+//['middleware' => 'auth'],
 Route::prefix('product')->group(function(){
     Route::post("/create",[\App\Http\Controllers\ProductController::class, 'store']);
     Route::get("/getAll",[\App\Http\Controllers\ProductController::class, 'index']);

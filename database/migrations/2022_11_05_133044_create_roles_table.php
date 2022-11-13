@@ -15,9 +15,6 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('farmer');
-            $table->string('admin');
-            $table->string('salesPerson');
             $table->timestamps();
         });
     }

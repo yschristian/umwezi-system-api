@@ -23,10 +23,17 @@ class RoleAndPermissionsSeeder extends Seeder
         $getAllProduct ='get product';
         $getAllUser ='get user';
         $makeOrder = 'make order';
+        $getAllOrder ='get allOrder';
+        $approveOrder='approve Order';
+        $getUserOrder='get user order';
         Permission ::create(['name'=> $addUser]);
         Permission ::create(['name'=> $CreateProduct]);
         Permission ::create(['name'=> $getAllProduct]);
         permission ::create(['name'=> $getAllUser]);
+        permission ::create(['name'=> $makeOrder]);
+        permission ::create(['name'=> $getAllOrder]);
+        permission ::create(['name'=> $approveOrder]);
+        permission ::create(['name'=> $getUserOrder]);
         //Define roles Available
         $admin = 'admin';
         $farmer = 'farmer';
@@ -42,7 +49,8 @@ class RoleAndPermissionsSeeder extends Seeder
         Role::create(['name'=> $salesPerson])
             ->givePermissionTo([
                 $makeOrder,
-                $getAllProduct
+                $getAllProduct,
+                $getUserOrder
             ]);
     }
 }
