@@ -15,26 +15,26 @@ class ProductController extends Controller
         $product = Product::create([
             'Title' => $request -> Title,
             'Description' => $request -> Description,
-            // 'Image' => $request -> Image,
             'Image' => $imageUrl,
             'Categories' => $request -> Categories,
             'Price' =>$request -> Price,
             'Address'=>$request -> Address,
             'user_id'=>$request -> user_id,
         ]);
-        return $product;
-        // return view('product')->with('product',$product);
+        // return $product;
+        return view('product')->with('products',$product);
     }
 
     public function index(){
         $products = Product::all();
         // return $products;
-        return view('product')->with('product',$products);
+        return view('product')->with('products',$products);
     }
     
     public function show($id){
         $product = Product::find($id);
-        return $product;
+        // return $product;
+        return view('ViewProduct')->with('product', $product);
     }
 
     public function destroy($id){

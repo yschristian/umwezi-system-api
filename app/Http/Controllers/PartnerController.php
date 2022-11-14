@@ -37,7 +37,8 @@ class PartnerController extends Controller
     public function show($id){
 
         $patner = Partner::find($id);
-        return $patner;
+        return view('ViewPartner')->with('patner',$patner);
+
     }
 
     public function edit($id){
@@ -47,7 +48,8 @@ class PartnerController extends Controller
 
     public function destroy($id){
         $patner = Partner::destroy($id);
-        return $patner;
+        // return $patner;
+        return view('partner')->with('partners',$patner);
     }
 
     public function update(Request $request,$id){

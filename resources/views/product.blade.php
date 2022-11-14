@@ -53,40 +53,27 @@
 							<tr>
 								<th>Image</th>
 								<th>Title</th>
-								<th>Description</th>
                                 <th>Categories</th>
                                 <th>Price</th>
-                                <th>Address</th>
 								<th>Action</th>
 							</tr>
 						</thead>
 						<tbody>
+						 @foreach($products as $product )
 							<tr>
 								<td>
-									<img src="img/test.jpeg">
+									<img src="{{$product->Image}}">
 								</td>
-								<td>sgdhsa</td>
-								<td>title</td>
-                                <td>descr</td>
-                                <td>categories</td>
-                                <td>price</td>
+								<td>{{$product->Title}}</td>
+                                <td>{{$product->Categories}}</td>
+                                <td>{{$product->Price}}</td>
 								<td>
-									<a href="#" class="btn">View</a>
+									<a href="{{url('/product/getOne/'.$product->id)}}" class="btn">View</a>
+									<a href="#" class="btn">edit</a>
+									<a href="#" class="btn">delete</a>
 								</td>
 							</tr>
-                            <tr>
-								<td>
-									<img src="img/test.jpeg">
-								</td>
-								<td>sgsag</td>
-								<td>title</td>
-                                <td>descr</td>
-                                <td>categories</td>
-                                <td>price</td>
-								<td>
-									<a href="#" class="btn">View</a>
-								</td>
-							</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>
@@ -97,25 +84,25 @@
         <h3>Create Product</h3>
     </div>
 	<div class="card">
-		<form class="card-form" action="{{url('/product/create')}}" method="POST">
+		<form class="card-form" action="{{url('/product/create')}}" method="POST" enctype="multipart/form-data">
             {{csrf_field()}}
         <div class="input">
-				<input type="file" class="input-field" placeholder="Image" required/>
+				<input type="file" name="Image" class="input-field" placeholder="Image" required/>
 			</div>
 			<div class="input">
-				<input type="text" class="input-field" placeholder="Title" required/>
+				<input type="text" name="Title" class="input-field" placeholder="Title" required/>
 			</div>
 			<div class="input">
-				<input type="text" class="input-field" placeholder="Description" required/>
+				<input type="text" name="Description" class="input-field" placeholder="Description" required/>
 			</div>
             <div class="input">
-				<input type="text" class="input-field" placeholder="Categories" required/>
+				<input type="text" name="Categories" class="input-field" placeholder="Categories" required/>
 			</div>
             <div class="input">
-				<input type="text" class="input-field" placeholder="Price" required/>
+				<input type="text" name="Price" class="input-field" placeholder="Price" required/>
 			</div>
             <div class="input">
-				<input type="text" class="input-field" placeholder="Addres" required/>
+				<input type="text" name="Address" class="input-field" placeholder="Addres" required/>
 			</div>
 			<div class="action">
 				<button class="action-button">create</button>

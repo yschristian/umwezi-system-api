@@ -50,7 +50,6 @@
 						<thead>
 							<tr>
 								<th>FirstName</th>
-								<th>LastName</th>
 								<th>Email</th>
                                 <th>Option</th>
 								<th>Actions</th>
@@ -60,11 +59,15 @@
 							@foreach($partners as $partner )
 							<tr>
 								<td>{{$partner -> FirstName}}</td>
-								<td>{{$partner -> LastName}}</td>
-                                <td>{{$partner -> Email}}</td>
+                                <td>{{$partner -> Email}},</td>
                                 <td>{{$partner -> Option}}</td>
-								<td>
-                                    <a href="#" class="btn">View</a>
+								<td style="display: flex ">
+								<a href="{{url('/request/getOne/'.$partner->id)}}" class="btn">View</a>
+									<form method="POST" action="{{url('/request/delete/'.$partner->id)}}">
+										{{csrf_field()}}
+										@method("DELETE")
+										<button  style="border: none; cursor:pointer" class="btn">delete</button>
+									</form>
 								</td>
 							</tr>
 							@endforeach
