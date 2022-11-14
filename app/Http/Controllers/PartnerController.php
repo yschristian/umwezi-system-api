@@ -58,21 +58,15 @@ class PartnerController extends Controller
         $partner -> update($input);
         return $partner;
     }
-    public function approve(Request $request,$id){
-        $patner = Partner::find($id)-> partners;
-        $item =  $request->all();
+    public function approve($id){
+        $patner = Partner::find($id);
         $hashed_random_password = Hash::make(str::random(8));
-
-        if($item){
             $user = User::create([
-                "username" => $item->FirstName,
-                "email" => $item->Email,
+                "username" => $patner ->FirstName,
+                "email" => $patner ->Email,
                 "password"=>$hashed_random_password,
             ]);
-            return response(["message"=>"user approved",$user], 201);
-          
-        }
-        
+            return response(["message"=>"user approved",$user], 201);   
     }
 
 }
