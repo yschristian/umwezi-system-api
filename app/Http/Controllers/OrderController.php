@@ -17,14 +17,14 @@ class OrderController extends Controller
             'address'=>$request->address,
             'status' => $request -> status
         ]);
-        // return $createOrder;
-        return view('order')->with('order', $createOrder);
+        return $createOrder;
+        // return view('order')->with('order', $createOrder);
     }
 
     public function index(){
-        $orders = Order::all();
-        // return $orders;
-        return view('order')->with('order',$orders);
+        $orders = Order::with('product')->get();
+        //  return $orders;
+        return view('order')->with('orders',$orders);
     }
     
     public function show($id){

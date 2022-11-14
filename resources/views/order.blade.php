@@ -51,7 +51,7 @@
 					<table>
 						<thead>
 							<tr>
-								<th>Name</th>
+								<th>User</th>
 								<th>Product</th>
 								<th>Quantity</th>
                                 <th>amount</th>
@@ -61,18 +61,21 @@
 							</tr>
 						</thead>
 						<tbody>
+						@foreach($orders as $order )
 							<tr>
-								<td>Yubahwe</td>
-								<td>sgdhsa</td>
-								<td>title</td>
-                                <td>descr</td>
-                                <td>categories</td>
-                                <td>completd</td>
+								<!-- <td>Yubahwe</td> -->
+								<td>{{$order ->user->username}}</td>
+								<td>{{$order ->product->Title}}</td>
+								<td>{{$order ->quantity}}</td>
+                                <td>{{$order ->amount}}</td>
+                                <td>{{$order ->address}}</td>
+                                <td>{{$order ->status}}</td>
 								<td>
-									<a href="#" class="btn">edit</a>
+									<a href="#" class="btn">view</a>
 									<a href="#" class="btn">delete</a>
 								</td>
 							</tr>
+							@endforeach
 						</tbody>
 					</table>
 				</div>

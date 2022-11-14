@@ -62,6 +62,12 @@
 					<span class="text">Message</span>
 				</a>
 			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-message-dots' ></i>
+					<span class="text">configuration</span>
+				</a>
+			</li>
 		</ul>
 		<ul class="side-menu">
 			<li>

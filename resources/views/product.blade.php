@@ -104,6 +104,9 @@
             <div class="input">
 				<input type="text" name="Address" class="input-field" placeholder="Addres" required/>
 			</div>
+			<div class="input">
+				<input type="number" name="user_id" class="input-field" value="{{auth()->user()->id}}" hidden/>
+			</div>
 			<div class="action">
 				<button class="action-button">create</button>
 			</div>

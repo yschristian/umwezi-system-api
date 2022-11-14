@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 
 class Usercontroller extends Controller
@@ -21,23 +22,23 @@ class Usercontroller extends Controller
         return view('user')->with('user',$createUser);
     }
 
-    public function login(Request $request){
+    // public function login(Request $request){
 
-        $loginUser = $request-> validate([
-            'email' => 'required|string',
-            'password' => 'required|string',
-        ]);
-        $user = User :: where('email', $loginUser['email'])-> first();
-        if(!$user || !Hash:: check($loginUser['password'], $user -> password)){
-            return response(["message"=>"wrong credentials"],401);
-        };
-        $token = $user -> createToken('umwezi')->plainTextToken;
-        $response=[
-            "user"=>$user,
-            "token"=>$token
-        ];
-        return response($response ,200);
-    }
+    //     $loginUser = $request-> validate([
+    //         'email' => 'required|string',
+    //         'password' => 'required|string',
+    //     ]);
+    //     $user = User :: where('email', $loginUser['email'])-> first();
+    //     if(!$user || !Hash:: check($loginUser['password'], $user -> password)){
+    //         return response(["message"=>"wrong credentials"],401);
+    //     };
+    //     $token = $user -> createToken('umwezi')->plainTextToken;
+    //     $response=[
+    //         "user"=>$user,
+    //         "token"=>$token
+    //     ];
+    //     return response($response ,200);
+    // }
 
     public function index(){
 
@@ -48,8 +49,10 @@ class Usercontroller extends Controller
     }
     
     public function show($id){
+
         $user = User::find($id);
-        return $user;
+         // return $user;
+        return view('ViewUser')->with('user', $user);
     }
 
     public function destroy($id){
@@ -63,4 +66,60 @@ class Usercontroller extends Controller
         $user-> update($input);
         return $user;
     }
+
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+ 
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('/');
+        }
+        // else if(Auth::attempt($credentials))
+        //   {
+        //     return redirect()->intended('management/dashboard');
+        //     }
+      else{
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ])->onlyInput('email');
+    
+    }
+}
+    public function logout(Request $request)
+{
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/login');
+}
+
+public function grantPermissions(Request $request,$id)
+{
+    $input=$request->all();
+    $permissions=array_values($input);
+    unset($permissions[0]);
+    unset($permissions[1]);
+    $permissions=array_values($permissions);
+    $user=User::find($id);
+    $role = Role::where('name',$user->role)->first();
+    $role->givePermissionTo($permissions);
+    return redirect('/management/roles/'.$id.'/edit');
+}
+public function revokePermissions(Request $request,$id)
+{
+    $input=$request->all();
+    $permissions=array_values($input);
+    unset($permissions[0]);
+    unset($permissions[1]);
+    $permissions=array_values($permissions);
+    $user=User::find($id);
+    $role = Role::where('name',$user->role)->first();
+    $role->revokePermissionTo($permissions);
+    return redirect('/management/roles/'.$id.'/edit');
+}
+
 }

@@ -60,7 +60,7 @@
 								<td>{{$user-> username}}</td>
 								<td>{{$user -> email}}</td>
 								<td>
-									<a href="#" class="btn">View</a>
+								<a href="{{url('/user/getone/'.$user->id)}}" class="btn">View</a>
                                     <a href="#" class="btn">edit</a>
                                     <a href="#" class="btn">delete</a>
 								</td>
