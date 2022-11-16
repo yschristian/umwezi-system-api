@@ -15,9 +15,6 @@
 		</div>
 	</div>
 </section>
-
-
-
 <div class="page-wrapper">
   <div class="cart shopping">
     <div class="container">
@@ -73,7 +70,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="checkout.html" class="btn btn-main pull-right">Checkout</a>
+                <a href="/checkout" class="btn btn-main pull-right">Checkout</a>
               </form>
             </div>
           </div>
