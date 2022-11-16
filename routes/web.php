@@ -77,3 +77,13 @@ Route::get('/singleproduct', function () {
 Route::get('/market', function () {
     return view('components.Market');
 });
+Route::get('/contact', function () {
+    return view('components.contact');
+});
+
+Route::get('/checkout', function () {
+    return view('components.checkout');
+});
+Route::get('/confirmation', function () {
+    return view('components.confirmation');
+});

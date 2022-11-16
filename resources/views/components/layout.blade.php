@@ -189,25 +189,12 @@
 										<!-- <li class="dropdown-header">Pages</li> -->
 										<li role="separator" class="divider"></li>
 										<li><a href="/market">Market</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
+										<!-- <li><a href="/checkout">Checkout</a></li> -->
 										<li><a href="/cart">Cart</a></li>
 										<!-- <li><a href="pricing.html">Pricing</a></li> -->
-										<li><a href="confirmation.html">Confirmation</a></li>
-
+										<!-- <li><a href="/confirmation">Confirmation</a></li> -->
 									</ul>
 								</div>
-
-								<!-- Layout -->
-								<!-- <div class="col-lg-6 col-md-6 mb-sm-3">
-									<ul>
-										<li class="dropdown-header">Layout</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="product-single.html">Product Details</a></li>
-										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
-
-									</ul>
-								</div> -->
-
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
 					</li><!-- / Elements -->
@@ -224,53 +211,17 @@
 								<!-- Introduction -->
 								<div class="col-sm-3 col-xs-12">
 									<ul>
-										<!-- <li class="dropdown-header">Introduction</li> -->
 										<li role="separator" class="divider"></li>
-										<li><a href="contact.html">Vegetables</a></li>
-										<li><a href="about.html">Fruits</a></li>
-                                        <li><a href="order.html">Rice</a></li>
-										<!-- <li><a href="address.html">Address</a></li> -->
-										<!-- <li><a href="404.html">404 Page</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li> -->
-										<!-- <li><a href="faq.html">FAQ</a></li> -->
+										<li><a href="#">Vegetables</a></li>
+										<li><a href="#">Fruits</a></li>
+                                        <li><a href="#">Rice</a></li>
 									</ul>
 								</div>
-
-								
-								<!-- <div class="col-sm-3 col-xs-12">
-									<ul>
-										<li class="dropdown-header">Dashboard</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="dashboard.html">User Interface</a></li>
-										<li><a href="order.html">Orders</a></li>
-										<li><a href="address.html">Address</a></li>
-										<li><a href="profile-details.html">Profile Details</a></li>
-									</ul>
-								</div> -->
-
-								<!-- Utility -->
-								<!-- <div class="col-sm-3 col-xs-12">
-									<ul>
-										<li class="dropdown-header">Utility</li>
-										<li role="separator" class="divider"></li>
-										<li><a href="login.html">Login Page</a></li>
-										<li><a href="signin.html">Signin Page</a></li>
-										<li><a href="forget-password.html">Forget Password</a></li>
-									</ul>
-								</div> -->
-
-								<!-- Mega Menu -->
-								<!-- <div class="col-sm-3 col-xs-12">
-									<a href="shop.html">
-										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
-									</a>
-								</div> -->
-							</div><!-- / .row -->
-						</div><!-- / .dropdown-menu -->
-					</li><!-- / Pages -->
+							</div>
+						</div>
+					</li>
 			</div>
-			<!--/.navbar-collapse -->
-		</div><!-- / .container -->
+		</div>
 	</nav>
 </section>
 @yield('content')
@@ -280,38 +231,33 @@
 			<div class="col-md-12">
 				<ul class="social-media">
 					<li>
-						<a href="https://www.facebook.com/themefisher">
+						<a href="#">
 							<i class="tf-ion-social-facebook"></i>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.instagram.com/themefisher">
+						<a href="#">
 							<i class="tf-ion-social-instagram"></i>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.twitter.com/themefisher">
+						<a href="#">
 							<i class="tf-ion-social-twitter"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.pinterest.com/themefisher/">
-							<i class="tf-ion-social-pinterest"></i>
 						</a>
 					</li>
 				</ul>
 				<ul class="footer-menu text-uppercase">
 					<li>
-						<a href="contact.html">CONTACT</a>
+						<a href="/contact">CONTACT</a>
 					</li>
 					<li>
 						<a href="/market">Market</a>
 					</li>
 					<li>
-						<a href="contact.html">PRIVACY POLICY</a>
+						<a href="#">PRIVACY POLICY</a>
 					</li>
 				</ul>
-				<p class="copyright-text">Copyright &copy;2022, Designed &amp; Developed by Umuhoza & Yubahwe</p>
+				<p class="copyright-text">Copyright &copy;2022, Designed &amp; Developed by U&Y</p>
 			</div>
 		</div>
 	</div>
