@@ -169,7 +169,7 @@
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="#">Home</a>
+						<a href="/home">Home</a>
 					</li><!-- / Home -->
 
                     <li class="dropdown ">
