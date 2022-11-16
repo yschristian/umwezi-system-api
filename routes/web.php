@@ -59,3 +59,12 @@ Route::get('/signup', function () {
 Route::get('/forgot', function () {
     return view('components.forgotPassword');
 });
+Route::get('/userdashboard', function () {
+    return view('components.userDashboard');
+});
+Route::get('/profiledetails', function () {
+    return view('components.profileDetails');
+});
+Route::get('/userOrder', function () {
+    return view('components.userOrder');
+});
