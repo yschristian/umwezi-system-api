@@ -48,7 +48,7 @@
 <body id="body">
 
 
-<section class="signin-page account">
+<section class="forget-password-page account">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -56,24 +56,17 @@
           <a class="logo" href="index.html">
             <!-- <img src="images/logo.png" alt=""> -->
           </a>
-          <h2 class="text-center">Create Your Account</h2>
-          <form class="text-left clearfix" action="{{url('/user/create')}}" method="POST">
-          {{csrf_field()}}
+          <h2 class="text-center">Welcome Back</h2>
+          <form class="text-left clearfix">
+            <p>Please enter the email address for your account.</p>
             <div class="form-group">
-              <input type="text" class="form-control"  placeholder="Username">
-            </div>
-            <div class="form-group">
-              <input type="email" class="form-control"  placeholder="Email">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control"  placeholder="Password">
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Account email address">
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-main text-center">Sign In</button>
+              <button type="submit" class="btn btn-main text-center">Request password reset</button>
             </div>
           </form>
-          <p class="mt-20">Already hava an account ?<a href="/login"> Login</a></p>
-          <p><a href="/forgot"> Forgot your password?</a></p>
+          <p class="mt-20"><a href="/login">Back to log in</a></p>
         </div>
       </div>
     </div>

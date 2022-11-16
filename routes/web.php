@@ -56,3 +56,6 @@ Route::get('/home', function () {
 Route::get('/signup', function () {
     return view('components.signup');
 });
+Route::get('/forgot', function () {
+    return view('components.forgotPassword');
+});
