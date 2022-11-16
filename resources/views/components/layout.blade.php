@@ -112,7 +112,7 @@
 								<span class="total-price">$1799.00</span>
 							</div>
 							<ul class="text-center cart-buttons">
-								<li><a href="cart.html" class="btn btn-small">View Cart</a></li>
+								<li><a href="/cart" class="btn btn-small">View Cart</a></li>
 								<li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
 							</ul>
 						</div>
@@ -188,9 +188,9 @@
 									<ul>
 										<!-- <li class="dropdown-header">Pages</li> -->
 										<li role="separator" class="divider"></li>
-										<li><a href="shop.html">Market</a></li>
+										<li><a href="/market">Market</a></li>
 										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										<li><a href="/cart">Cart</a></li>
 										<!-- <li><a href="pricing.html">Pricing</a></li> -->
 										<li><a href="confirmation.html">Confirmation</a></li>
 
@@ -305,10 +305,7 @@
 						<a href="contact.html">CONTACT</a>
 					</li>
 					<li>
-						<a href="shop.html">SHOP</a>
-					</li>
-					<li>
-						<a href="pricing.html">Pricing</a>
+						<a href="/market">Market</a>
 					</li>
 					<li>
 						<a href="contact.html">PRIVACY POLICY</a>

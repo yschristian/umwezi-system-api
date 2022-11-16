@@ -68,3 +68,12 @@ Route::get('/profiledetails', function () {
 Route::get('/userOrder', function () {
     return view('components.userOrder');
 });
+Route::get('/cart', function () {
+    return view('components.Cart');
+});
+Route::get('/singleproduct', function () {
+    return view('components.singleProduct');
+});
+Route::get('/market', function () {
+    return view('components.Market');
+});
