@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
 <html lang="en">
 <head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
   <meta charset="utf-8">
   <title>UMWEZI FARMING</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Construction Html5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="author" content="Themefisher">
   <meta name="generator" content="Themefisher Constra HTML Template v1.0">
   
+  <!-- theme meta -->
   <meta name="theme-name" content="aviato" />
-
+  
+  <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-
+  
+  <!-- Themefisher Icon font -->
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
   <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
@@ -38,22 +54,26 @@
       <div class="col-md-6 col-md-offset-3">
         <div class="block text-center">
           <a class="logo" href="index.html">
-          <h2 class="text-center">UMEZI FARMING</h2>
+            <!-- <img src="images/logo.png" alt=""> -->
           </a>
-          <!-- <h2 class="text-center">Welcome Back</h2> -->
-          <form class="text-left clearfix" action="{{url('/user/login')}}" method="POST">
-            {{csrf_field()}}
+          <h2 class="text-center">Create Your Account</h2>
+          <form class="text-left clearfix" action="{{url('/user/create')}}" method="POST">
+          {{csrf_field()}}
             <div class="form-group">
-              <input type="email" class="form-control" name="email"  placeholder="Email">
+              <input type="text" class="form-control"  placeholder="Username">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" name="password" placeholder="Password">
+              <input type="email" class="form-control"  placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control"  placeholder="Password">
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-main text-center">Login</button>
+              <button type="submit" class="btn btn-main text-center">Sign In</button>
             </div>
           </form>
-          <p class="mt-20">New in this site ?<a href="/signup"> Create New Account</a></p>
+          <p class="mt-20">Already hava an account ?<a href="/login"> Login</a></p>
+          <p><a href="forget-password.html"> Forgot your password?</a></p>
         </div>
       </div>
     </div>
@@ -88,6 +108,7 @@
     <!-- Main Js File -->
     <script src="{{URL::asset('js/script1.js');}}"></script>
     
+
 
   </body>
   </html>

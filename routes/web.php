@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('dashboard');
 });
+
 Route::get('/login', function () {
     return view('login');
 });
+
 Route::prefix('product')->group(function(){
     Route::post("/create",[\App\Http\Controllers\ProductController::class, 'store']);
     Route::get("/getAll",[\App\Http\Controllers\ProductController::class, 'index']);
@@ -45,3 +47,12 @@ Route::prefix('user')->group(function(){
     Route::post("/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
     
     });
+
+//home  
+Route::get('/home', function () {
+    return view('components/index');
+});
+
+Route::get('/signup', function () {
+    return view('components.signup');
+});

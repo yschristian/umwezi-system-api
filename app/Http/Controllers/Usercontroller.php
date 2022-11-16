@@ -19,7 +19,7 @@ class Usercontroller extends Controller
             'password'=>Hash::make($request->password)
         ]);
         // return $createUser;
-        return view('user')->with('user',$createUser);
+        return view('components.signup')->with('user',$createUser);
     }
 
     // public function login(Request $request){
