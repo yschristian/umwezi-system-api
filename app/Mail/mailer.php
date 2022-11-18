@@ -56,4 +56,10 @@ class mailer extends Mailable
     {
         return [];
     }
+    public function build()
+    {
+        return $this -> from('umuhozaaimee12@gmail.com','UMWEZIFS')
+        ->subject($this->data['subject'])
+        ->view('Emails')->with('data',$this->data);
+    }
 }

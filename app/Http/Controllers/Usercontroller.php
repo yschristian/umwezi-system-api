@@ -19,7 +19,13 @@ class Usercontroller extends Controller
             'password'=>Hash::make($request->password)
         ]);
         // return $createUser;
-        return view('components.signup')->with('user',$createUser);
+        $data = [
+            'subject'=>'Umwezi Farming System',
+            'body'=>' welcome to the UFS that is home of the Farmer your account already created'
+        ];
+        Mail::to($fields['email'])->send(new mailer($data));
+         return $createUser;
+        //return view('components.signup')->with('user',$createUser);
     }
 
     // public function login(Request $request){
