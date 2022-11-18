@@ -5,30 +5,37 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
-
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class ProductController extends Controller
 {   
     public function store(Request $request){
 
-         $imageUrl = cloudinary()->upload($request->file('Image')->getRealPath())->getSecurePath();
+        $images= array();
+        $image = $request->file("Image");
+        foreach($image as $img)
+        {
+            $imageUrl = Cloudinary::upload($img->getRealPath())->getSecurePath();
+            array_push($images,$imageUrl);
+        }
+
         $product = Product::create([
             'Title' => $request -> Title,
             'Description' => $request -> Description,
-            'Image' => $imageUrl,
+            'Image' => $image,
             'Categories' => $request -> Categories,
             'Price' =>$request -> Price,
             'Address'=>$request -> Address,
             'user_id'=>$request -> user_id,
         ]);
-        // return $product;
-        return view('product')->with('products',$product);
+        return $product;
+        // return view('product')->with('products',$product);
     }
 
     public function index(){
         $products = Product::all();
-        // return $products;
-        return view('product')->with('products',$products);
+        return $products;
+        // return view('product')->with('products',$products);
     }
     
     public function show($id){
