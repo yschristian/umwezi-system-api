@@ -15,7 +15,7 @@ class ProductController extends Controller
         $image = $request->file("Image");
         foreach($image as $img)
         {
-            $imageUrl = Cloudinary::upload($img->getRealPath())->getSecurePath();
+            $imageUrl = cloudinary()->upload($img->getRealPath())->getSecurePath();
             array_push($images,$imageUrl);
         }
 
@@ -23,22 +23,31 @@ class ProductController extends Controller
             
             'Title' => $request -> Title,
             'Description' => $request -> Description,
-            'Image' => $image,
+            'Image' => $images,
             'Categories' => $request -> Categories,
             'Price' =>$request -> Price,
             'Address'=>$request -> Address,
             'user_id'=>$request -> user_id,
         ]);
-        return $product;
-        // return view('product')->with('products',$product);
+        // return $product;
+         return view('product')->with('products',$product);
     }
 
     public function index(){
         $products = Product::all();
-        return $products;
-        // return view('product')->with('products',$products);
+        // return $products;
+        return view('product')->with('products',$products);
     }
-    
+    public function marketAll(){
+        $products = Product::all();
+        // return $products;
+        return view('components.Market')->with('products',$products);
+    }
+    public function marketOne($id){
+        $product = Product::find($id);
+        // return $products;
+        return view('components.singleProduct')->with('products',$product);
+    }
     public function show($id){
         $product = Product::find($id);
         // return $product;

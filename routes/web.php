@@ -14,6 +14,7 @@ Route::get('/login', function () {
 Route::prefix('product')->group(function(){
     Route::post("/create",[\App\Http\Controllers\ProductController::class, 'store']);
     Route::get("/getAll",[\App\Http\Controllers\ProductController::class, 'index']);
+    Route::get("/getAll",[\App\Http\Controllers\ProductController::class, 'marketAll']);
     Route::get("/getOne/{product}",[\App\Http\Controllers\ProductController::class, 'show']);
     Route::delete("/delete/{product}",[\App\Http\Controllers\ProductController::class, 'destroy']);
     Route::patch("/update/{product}",[\App\Http\Controllers\ProductController::class, 'update']);
@@ -71,12 +72,15 @@ Route::get('/userOrder', function () {
 Route::get('/cart', function () {
     return view('components.Cart');
 });
-Route::get('/singleproduct', function () {
-    return view('components.singleProduct');
-});
-Route::get('/market', function () {
-    return view('components.Market');
-});
+// Route::get('/singleproduct', function () {
+//     return view('components.singleProduct');
+// });
+// Route::get('/market', function () {
+//     return view('components.Market');
+    
+// });
+Route::get("/market",[\App\Http\Controllers\ProductController::class, 'marketAll']);
+Route::get("/singleProduct/{id}",[\App\Http\Controllers\ProductController::class, 'marketOne']);
 Route::get('/contact', function () {
     return view('components.contact');
 });

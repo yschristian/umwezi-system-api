@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('Title');
             $table->string('Description');
-            $table->string('Image');
+            $table->json('Image');
             $table->string('Categories');
             $table->string('Price');
             $table->string('Address');

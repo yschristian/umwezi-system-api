@@ -28,7 +28,9 @@
 	</div>
 				</div>
 				<div class="todo">
-                <img src="{{$product->Image}}" width="100%" height="100%">
+				@foreach($product->Image as $image )
+               	 <img src="{{$image}}" width="100%" height="100%">
+				@endforeach
 				</div>
 			</div>
 		</main>

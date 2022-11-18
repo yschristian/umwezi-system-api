@@ -17,6 +17,7 @@ class Product extends Model
             'Address',
             'user_id'
     ];
+    protected $casts=['Image'=>'array'];
     public function user(){
         return $this-> belongsTo(User::class);
     }

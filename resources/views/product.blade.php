@@ -62,7 +62,7 @@
 						 @foreach($products as $product )
 							<tr>
 								<td>
-									<img src="{{$product->Image}}">
+									<img src="{{$product->Image[0]}}">
 								</td>
 								<td>{{$product->Title}}</td>
                                 <td>{{$product->Categories}}</td>

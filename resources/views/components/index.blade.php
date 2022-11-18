@@ -50,8 +50,8 @@
 					<a href="#!">
 						<img src="images/shop/category/category-1.jpg" alt="" />
 						<div class="content">
-							<h3>Clothes Sales</h3>
-							<p>Shop New Season Clothing</p>
+							<h3>Fruits Sales</h3>
+							<p>Shop New</p>
 						</div>
 					</a>	
 				</div>
@@ -59,8 +59,8 @@
 					<a href="#!">
 						<img src="images/shop/category/category-2.jpg" alt="" />
 						<div class="content">
-							<h3>Smart Casuals</h3>
-							<p>Get Wide Range Selection</p>
+							<h3>Vegetables</h3>
+							<p>Shop</p>
 						</div>
 					</a>	
 				</div>
@@ -70,8 +70,8 @@
 					<a href="#!">
 						<img src="images/shop/category/category-3.jpg" alt="" />
 						<div class="content">
-							<h3>Jewellery</h3>
-							<p>Special Design Comes First</p>
+							<h3>Rice</h3>
+							<p>Shop</p>
 						</div>
 					</a>	
 				</div>

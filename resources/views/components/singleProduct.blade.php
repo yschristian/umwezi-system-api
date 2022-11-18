@@ -10,12 +10,6 @@
 					<li class="active">Single Product</li>
 				</ol>
 			</div>
-			<!-- <div class="col-md-6">
-				<ol class="product-pagination text-right">
-					<li><a href="blog-left-sidebar.html"><i class="tf-ion-ios-arrow-left"></i> Next </a></li>
-					<li><a href="blog-left-sidebar.html">Preview <i class="tf-ion-ios-arrow-right"></i></a></li>
-				</ol>
-			</div> -->
 		</div>
 		<div class="row mt-20">
 			<div class="col-md-5">
