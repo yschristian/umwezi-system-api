@@ -13,6 +13,7 @@ class ProductController extends Controller
 
          $imageUrl = cloudinary()->upload($request->file('Image')->getRealPath())->getSecurePath();
         $product = Product::create([
+            
             'Title' => $request -> Title,
             'Description' => $request -> Description,
             'Image' => $imageUrl,
