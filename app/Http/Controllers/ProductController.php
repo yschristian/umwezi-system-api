@@ -36,7 +36,7 @@ class ProductController extends Controller
     public function index(){
         $products = Product::all();
         // return $products;
-        return view('product')->with('products',$products);
+        return view('product')->with('product',$products);
     }
     public function marketAll(){
         $products = Product::all();
@@ -46,13 +46,23 @@ class ProductController extends Controller
     public function marketOne($id){
         $product = Product::find($id);
         // return $products;
-        return view('components.singleProduct')->with('products',$product);
+        return view('components.singleProduct')->with('product',$product);
     }
     public function show($id){
         $product = Product::find($id);
         // return $product;
         return view('ViewProduct')->with('product', $product);
     }
+    public function cart($id){
+        $cart = Product::find($id);
+        // return $product;
+        return view('Cart')->with('cart', $product);
+    }
+    // public function getOne($id){
+    //     $product = Product::find($id);
+    //     // return $product;
+    //     return view('singleProduct')->with('product', $product);
+    // }
 
     public function destroy($id){
         $user = Product::destroy($id);

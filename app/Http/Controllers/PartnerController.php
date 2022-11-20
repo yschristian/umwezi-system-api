@@ -20,10 +20,11 @@ class PartnerController extends Controller
             'LastName'=> $request-> LastName,
             'Email'=>$request->Email,
             'Option'=>$request->Option,
-            'Description'=>$request->Description
+            'Description'=>$request->Description,
+            'Status'=>"pending"
         ]);
-        $partner->assignRole("admin");
-         return $request->Option;
+        // $partner->assignRole("admin");
+         return $partner;
         //return view('partner')->with('partners',$partner);
     }
     public function index(){

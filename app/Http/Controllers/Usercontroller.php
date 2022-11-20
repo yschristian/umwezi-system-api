@@ -18,13 +18,13 @@ class Usercontroller extends Controller
             'email'=>$request->email, 
             'password'=>Hash::make($request->password)
         ]);
-        // return $createUser;
-        $data = [
-            'subject'=>'Umwezi Farming System',
-            'body'=>' welcome to the UFS that is home of the Farmer your account already created'
-        ];
-        Mail::to($fields['email'])->send(new mailer($data));
-         return $createUser;
+        return $createUser;
+        // $data = [
+        //     'subject'=>'Umwezi Farming System',
+        //     'body'=>' welcome to the UFS that is home of the Farmer your account already created'
+        // ];
+        // Mail::to($fields['email'])->send(new mailer($data));
+        //  return $createUser;
         //return view('components.signup')->with('user',$createUser);
     }
 
@@ -60,10 +60,18 @@ class Usercontroller extends Controller
          // return $user;
         return view('ViewUser')->with('user', $user);
     }
+    public function edit($id){
+
+        $user = User::find($id);
+        //  return $user;
+        return view('EditUser')->with('user',$user);
+    }
 
     public function destroy($id){
         $user = User::destroy($id);
-        return $user;
+        // return $user;
+        // return view('user')->with('users',$user);
+        return redirect('/user/getAll');
     }
 
     public function update(Request $request,$id){
