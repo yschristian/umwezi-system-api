@@ -14,7 +14,6 @@ Route::get('/login', function () {
 Route::prefix('product')->group(function(){
     Route::post("/create",[\App\Http\Controllers\ProductController::class, 'store']);
     Route::get("/getAll",[\App\Http\Controllers\ProductController::class, 'index']);
-    Route::get("/getAll",[\App\Http\Controllers\ProductController::class, 'marketAll']);
     Route::get("/getOne/{product}",[\App\Http\Controllers\ProductController::class, 'show']);
     Route::delete("/delete/{product}",[\App\Http\Controllers\ProductController::class, 'destroy']);
     Route::patch("/update/{product}",[\App\Http\Controllers\ProductController::class, 'update']);
@@ -46,7 +45,7 @@ Route::prefix('user')->group(function(){
     Route::patch("/update/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
     Route::delete("/delete/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
     Route::post("/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
-    
+    Route::post("/edit/{user}",[\App\Http\Controllers\Usercontroller::class, 'edit']);
     });
 
 //home  
@@ -69,16 +68,12 @@ Route::get('/profiledetails', function () {
 Route::get('/userOrder', function () {
     return view('components.userOrder');
 });
-Route::get('/cart', function () {
-    return view('components.Cart');
-});
-// Route::get('/singleproduct', function () {
-//     return view('components.singleProduct');
+// Route::get('/cart', function () {
+//     return view('components.Cart');
 // });
-// Route::get('/market', function () {
-//     return view('components.Market');
-    
-// });
+// Route::post("/cart",[\App\Http\Controllers\CartController::class, 'addToCart']);
+
+
 Route::get("/market",[\App\Http\Controllers\ProductController::class, 'marketAll']);
 Route::get("/singleProduct/{id}",[\App\Http\Controllers\ProductController::class, 'marketOne']);
 Route::get('/contact', function () {
@@ -91,3 +86,9 @@ Route::get('/checkout', function () {
 Route::get('/confirmation', function () {
     return view('components.confirmation');
 });
+
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::POST('/cart', [CartController::class, 'addToCart']);
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');

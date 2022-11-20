@@ -16,6 +16,7 @@ Route::post("/create",[\App\Http\Controllers\Usercontroller::class, 'store']);
 Route::patch("/update/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
 Route::delete("/delete/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
 Route::post("/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
+Route::post("/edit/{user}",[\App\Http\Controllers\Usercontroller::class, 'edit']);
 
 });
 //requests
