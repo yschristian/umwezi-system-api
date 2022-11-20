@@ -59,10 +59,14 @@
 							<tr>
 								<td>{{$user-> username}}</td>
 								<td>{{$user -> email}}</td>
-								<td>
+								<td style="display:flex">
 								<a href="{{url('/user/getone/'.$user->id)}}" class="btn">View</a>
-                                    <a href="#" class="btn">edit</a>
-                                    <a href="#" class="btn">delete</a>
+                                    <a href="{{url('/user/edit/'.$user->id)}}" class="btn">edit</a>
+                                    <form method="POST" action="{{url('/user/delete/'.$user->id)}}" style="display:inline">
+										{{csrf_field()}}
+										@method("DELETE")
+									<button  style="border: none; cursor:pointer" class="btn">delete</button>
+									</form>
 								</td>
 							</tr>
                             @endforeach

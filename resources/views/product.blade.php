@@ -59,7 +59,7 @@
 							</tr>
 						</thead>
 						<tbody>
-						 @foreach($products as $product )
+						 @foreach($product as $product )
 							<tr>
 								<td>
 									<img src="{{$product->Image[0]}}">

@@ -23,18 +23,18 @@
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
   
   <!-- Themefisher Icon font -->
-  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <link rel="stylesheet" href="{{asset('plugins/themefisher-font/style.css')}}">
   <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('plugins/bootstrap/css/bootstrap.min.css')}}">
   
   <!-- Animate css -->
-  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <link rel="stylesheet" href="{{asset('plugins/animate/animate.css')}}">
   <!-- Slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="{{asset('plugins/slick/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('plugins/slick/slick-theme.css')}}">
   
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="{{URL::asset('css/style1.css');}}"}>
+  <link rel="stylesheet" href="{{asset('css/style1.css')}}"}>
 
 </head>
 
@@ -268,25 +268,25 @@
     =====================================-->
     
     <!-- Main jQuery -->
-    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('plugins/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap 3.1 -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- Bootstrap Touchpin -->
-    <script src="plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="{{asset('plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')}}"></script>
     <!-- Instagram Feed Js -->
-    <script src="plugins/instafeed/instafeed.min.js"></script>
+    <script src="{{asset('plugins/instafeed/instafeed.min.js')}}"></script>
     <!-- Video Lightbox Plugin -->
-    <script src="plugins/ekko-lightbox/dist/ekko-lightbox.min.js"></script>
+    <script src="{{asset('plugins/ekko-lightbox/dist/ekko-lightbox.min.js')}}"></script>
     <!-- Count Down Js -->
-    <script src="plugins/syo-timer/build/jquery.syotimer.min.js"></script>
+    <script src="{{asset('plugins/syo-timer/build/jquery.syotimer.min.js')}}"></script>
 
     <!-- slick Carousel -->
-    <script src="plugins/slick/slick.min.js"></script>
-    <script src="plugins/slick/slick-animation.min.js"></script>
+    <script src="{{asset('plugins/slick/slick.min.js')}}"></script>
+    <script src="{{asset('plugins/slick/slick-animation.min.js')}}"></script>
 
     <!-- Google Mapl -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
-    <script type="text/javascript" src="plugins/google-map/gmap.js"></script>
+    <script type="text/javascript" src="{{asset('plugins/google-map/gmap.js')}}"></script>
 
     <!-- Main Js File -->
     <script src="{{URL::asset('js/script1.js');}}"></script>

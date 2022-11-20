@@ -56,6 +56,7 @@
 								<th>Quantity</th>
                                 <th>amount</th>
                                 <th>Address</th>
+								<th>Date</th>
                                 <th>Status</th>
 								<th>Action</th>
 							</tr>
@@ -69,6 +70,7 @@
 								<td>{{$order ->quantity}}</td>
                                 <td>{{$order ->amount}}</td>
                                 <td>{{$order ->address}}</td>
+								<td>{{$order ->created_at}}</td>
                                 <td>{{$order ->status}}</td>
 								<td>
 									<a href="#" class="btn">view</a>

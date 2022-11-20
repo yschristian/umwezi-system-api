@@ -26,10 +26,10 @@
 			</div> -->
 		</form>
 	</div>
-				</div>
-				<div class="todo">
+			</div>
+				<div >
 				@foreach($product->Image as $image )
-               	 <img src="{{$image}}" width="100%" height="100%">
+               	 <img src="{{$image}}"  width="200px" height="200px">
 				@endforeach
 				</div>
 			</div>

@@ -11,6 +11,7 @@
 			<div class="input">
 				<input type="text" value="{{$user-> email}}" class="input-field" readOnly/>
 			</div>
+			
 		</form>
 	</div>
 				</div>

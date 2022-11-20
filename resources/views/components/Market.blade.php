@@ -18,8 +18,8 @@
 
 <section class="products section">
 	<div class="container">
+	@foreach($products as $product)
 		<div class="row">
-			@foreach($products as $product)
 			<div class="col-md-4">
 				<div class="product-item">
 					<div class="product-thumb">
@@ -49,9 +49,9 @@
 					</div>
 				</div>
 			</div>
-			@endforeach
+			
 			</div>
-		
+			@endforeach
 		<!-- Modal -->
 		<!-- <div class="modal product-modal fade" id="product-modal">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">

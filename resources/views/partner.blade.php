@@ -52,6 +52,7 @@
 								<th>FirstName</th>
 								<th>Email</th>
                                 <th>Option</th>
+								<th>Status</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
@@ -61,8 +62,10 @@
 								<td>{{$partner -> FirstName}}</td>
                                 <td>{{$partner -> Email}},</td>
                                 <td>{{$partner -> Option}}</td>
+								<td>{{$partner -> Status}}</td>
 								<td style="display: flex ">
 								<a href="{{url('/request/getOne/'.$partner->id)}}" class="btn">View</a>
+								<a href="{{url('/request/getOne/'.$partner->id)}}" class="btn">accept</a>
 									<form method="POST" action="{{url('/request/delete/'.$partner->id)}}">
 										{{csrf_field()}}
 										@method("DELETE")
