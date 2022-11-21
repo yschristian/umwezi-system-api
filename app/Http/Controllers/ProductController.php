@@ -38,6 +38,11 @@ class ProductController extends Controller
         // return $products;
         return view('product')->with('product',$products);
     }
+    public function showLatest(){
+        $product = Product::latest()->latest()->paginate(5);
+        return view('components.index')->with('product',$products);
+
+    }
     public function marketAll(){
         $products = Product::all();
         // return $products;

@@ -80,7 +80,7 @@
 	</div>
 </section>
 
-<section class="products section bg-gray">
+<!-- <section class="products section bg-gray">
 	<div class="container">
 		<div class="row">
 			<div class="title text-center">
@@ -140,9 +140,9 @@
 						<p class="price">$200</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		<!-- Modal -->
-		<div class="modal product-modal fade" id="product-modal">
+		<!-- <div class="modal product-modal fade" id="product-modal">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<i class="tf-ion-close"></i>
 			</button>
@@ -170,7 +170,7 @@
 			        </div>
 		    	</div>
 		  	</div>
-		</div><!-- /.modal -->
+		</div> -->
 
 		</div>
 	</div>
@@ -206,7 +206,7 @@ Start Call To Action
 	<div class="container">
 		<div class="row">
 			<div class="title">
-				<h2>View us on instagram</h2>
+				<h2>View us on Social Media</h2>
 			</div>
 		</div>
 		<div class="row">

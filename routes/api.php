@@ -40,6 +40,8 @@ Route::prefix('product')->group(function(){
     Route::delete("/delete/{product}",[\App\Http\Controllers\ProductController::class, 'destroy']);
     Route::patch("/update/{product}",[\App\Http\Controllers\ProductController::class, 'update']);
     Route::get("/userProduct/{product}",[\App\Http\Controllers\ProductController::class, 'getUserProduct']);
+    Route::get("/latest",[\App\Http\Controllers\ProductController::class, 'showLatest']);
+
 });
 
 //order 
