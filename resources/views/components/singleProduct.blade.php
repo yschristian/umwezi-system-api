@@ -1,5 +1,8 @@
 @extends('components.layout')
 @section('content')
+@if(session('message'))
+<div>{{session("message")}}</div>
+@endif
 <section class="single-product">
 	<div class="container">
 
@@ -109,28 +112,26 @@
 							<option>XL</option>
 						</select>
 					</div> -->
-					<div class="product-quantity">
-						<span>Quantity:</span>
-						<div class="product-quantity-slider">
-							<input id="product-quantity" type="text" value="0" name="product-quantity">
-						</div>
-					</div>
+					
 					<div class="product-category">
 						<span>Categories:</span>
 						<ul>
 							<li><a href="product-single.html">{{$product -> Categories}}</a></li>
 						</ul>
 					</div>
-					<form action="{{url('/cart') }}" method="POST" enctype="multipart/form-data">
+					<form action="{{url('/cart')}}" method="POST" enctype="multipart/form-data">
+					<!-- url(route('cart.store') -->
                         @csrf
-                        <input type="hidden" value="{{ $product->id }}" name="id">
-                        <input type="hidden" value="{{ $product->Title }}" name="Title">
-                        <input type="hidden" value="{{ $product->Price }}" name="Price">
-                        <input type="hidden" value="{{ $product->Image[0] }}"  name="Image">
-                        <input type="hidden" value="1" name="quantity">
-                        <button class="px-4 py-1.5 text-white text-sm bg-blue-800 rounded">Add To Cart</button>
+						<input type="hidden" value="{{ $product->id }}" name="id">
+						<div class="product-quantity">
+						<span>Quantity:</span>
+						<div class="product-quantity-slider">
+							<input id="product-quantity" type="number" value="0" name="quantity">
+						</div>
+					 </div>
+                         <button type="submit" class="btn btn-main mt-20">Add To Cart</button> 
                     </form>
-					<!-- <a href="{{url('//'.$product->id)}}" class="btn btn-main mt-20">Add To Cart</a> -->
+					
 				</div>
 			</div>
 		</div>

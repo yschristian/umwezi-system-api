@@ -29,8 +29,8 @@ class ProductController extends Controller
             'Address'=>$request -> Address,
             'user_id'=>$request -> user_id,
         ]);
-        // return $product;
-         return view('product')->with('products',$product);
+        return $product;
+        //  return view('product')->with('products',$product);
     }
 
     public function index(){
@@ -53,11 +53,11 @@ class ProductController extends Controller
         // return $product;
         return view('ViewProduct')->with('product', $product);
     }
-    public function cart($id){
-        $cart = Product::find($id);
-        // return $product;
-        return view('Cart')->with('cart', $product);
-    }
+    // public function cart($id){
+    //     $cart = Product::find($id);
+    //     // return $product;
+    //     return view('Cart')->with('cart', $product);
+    // }
     // public function getOne($id){
     //     $product = Product::find($id);
     //     // return $product;

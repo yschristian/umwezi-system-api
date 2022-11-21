@@ -72,12 +72,12 @@
 			<div class="col-md-4 col-xs-12 col-sm-4">
 				<!-- Cart -->
 				<ul class="top-menu text-right list-inline">
-					<li class="dropdown cart-nav dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
-								class="tf-ion-android-cart"></i>Cart</a>
-						<div class="dropdown-menu cart-dropdown">
+					<li class="">
+						<a href="/cartItem" class="dropdown-toggle"><i
+								class="tf-ion-android-cart"></i>Cart({{\Gloudemans\Shoppingcart\Facades\Cart::content()->count()}})</a>
+						<!-- <div class="dropdown-menu cart-dropdown"> -->
 							<!-- Cart Item -->
-							<div class="media">
+							<!-- <div class="media">
 								<a class="pull-left" href="#!">
 									<img class="media-object" src="images/shop/cart/cart-1.jpg" alt="image" />
 								</a>
@@ -90,13 +90,13 @@
 									<h5><strong>$1200</strong></h5>
 								</div>
 								<a href="#!" class="remove"><i class="tf-ion-close"></i></a>
-							</div><!-- / Cart Item -->
+							</div> -->
 							<!-- Cart Item -->
-							<div class="media">
+							<!-- <div class="media">
 								<a class="pull-left" href="#!">
 									<img class="media-object" src="images/shop/cart/cart-2.jpg" alt="image" />
-								</a>
-								<div class="media-body">
+								</a> -->
+								<!-- <div class="media-body">
 									<h4 class="media-heading"><a href="#!">Ladies Bag</a></h4>
 									<div class="cart-price">
 										<span>1 x</span>
@@ -105,17 +105,17 @@
 									<h5><strong>$1200</strong></h5>
 								</div>
 								<a href="#!" class="remove"><i class="tf-ion-close"></i></a>
-							</div><!-- / Cart Item -->
+							</div> -->
 
-							<div class="cart-summary">
+							<!-- <div class="cart-summary">
 								<span>Total</span>
 								<span class="total-price">$1799.00</span>
-							</div>
-							<ul class="text-center cart-buttons">
-								<li><a href="/cart" class="btn btn-small">View Cart</a></li>
+							</div> -->
+							<!-- <ul class="text-center cart-buttons"> -->
+								<!-- <li><a href="/cart" class="btn btn-small">View Cart</a></li>
 								<li><a href="checkout.html" class="btn btn-small btn-solid-border">Checkout</a></li>
-							</ul>
-						</div>
+							</ul> -->
+						<!-- </div> -->
 
 					</li><!-- / Cart -->
 
@@ -138,13 +138,12 @@
 							<option>FR</option>
 							<option>ES</option>
 						</select>
-					</li><!-- / Languages -->
-
-				</ul><!-- / .nav .navbar-nav .navbar-right -->
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
-</section><!-- End Top Header Bar -->
+</section>
 
 
 <!-- Main Menu Section -->
@@ -190,7 +189,7 @@
 										<li role="separator" class="divider"></li>
 										<li><a href="/market">Market</a></li>
 										<!-- <li><a href="/checkout">Checkout</a></li> -->
-										<li><a href="/cart">Cart</a></li>
+										<li><a href="/cartItem">Cart</a></li>
 										<!-- <li><a href="pricing.html">Pricing</a></li> -->
 										<!-- <li><a href="/confirmation">Confirmation</a></li> -->
 									</ul>
