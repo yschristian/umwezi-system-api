@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Illuminate\Support\Facades;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 
 class Usercontroller extends Controller
@@ -31,25 +34,6 @@ class Usercontroller extends Controller
         //  return $createUser;
         //return view('components.signup')->with('user',$createUser);
     }
-
-    // public function login(Request $request){
-
-    //     $loginUser = $request-> validate([
-    //         'email' => 'required|string',
-    //         'password' => 'required|string',
-    //     ]);
-    //     $user = User :: where('email', $loginUser['email'])-> first();
-    //     if(!$user || !Hash:: check($loginUser['password'], $user -> password)){
-    //         return response(["message"=>"wrong credentials"],401);
-    //     };
-    //     $token = $user -> createToken('umwezi')->plainTextToken;
-    //     $response=[
-    //         "user"=>$user,
-    //         "token"=>$token
-    //     ];
-    //     return response($response ,200);
-    // }
-
     public function index(){
 
         $users = User::all();
@@ -91,15 +75,14 @@ class Usercontroller extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
- 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials) && Auth()->user()->role=='clients') {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/userdashboard');
         }
-        // else if(Auth::attempt($credentials))
-        //   {
-        //     return redirect()->intended('management/dashboard');
-        //     }
+        else if(Auth::attempt($credentials))
+          {
+            return redirect()->intended('/');
+            }
       else{
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
