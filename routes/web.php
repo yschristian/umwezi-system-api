@@ -43,9 +43,8 @@ Route::get("/user/getone/{user}",[\App\Http\Controllers\Usercontroller::class, '
 Route::patch("/user/update/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
 Route::delete("/user/delete/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
 Route::post("/user/edit/{user}",[\App\Http\Controllers\Usercontroller::class, 'edit']);
-Route::post("/user/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
 });
-
+Route::post("/user/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
 Route::post("/user/create",[\App\Http\Controllers\Usercontroller::class, 'store']);
 //home  
 Route::get('/home', function () {

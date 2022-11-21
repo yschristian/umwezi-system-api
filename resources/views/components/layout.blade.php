@@ -126,10 +126,16 @@
 					<li class="dropdown ">
 						<a href="/home">Home</a>
 					</li><!-- / Home -->
-
+			@if(!auth()->user())
                     <li class="dropdown ">
 						<a href="/login">LOGIN</a>
 					</li>
+			@endif
+				@if(auth()->user())
+                    <li class="dropdown ">
+						<a href="/logout">Log Out</a>
+					</li>
+				@endif		
 					<!-- Elements -->
 					<li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
