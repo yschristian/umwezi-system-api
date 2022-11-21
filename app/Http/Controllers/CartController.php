@@ -18,23 +18,23 @@ class CartController extends Controller
         $product = Product::findOrFail($request->input('id'));
         Cart::add(
             $product->id, 
-            $product-> Title,
+            $product-> Title, 
             $product-> Image,
             $request->input('quantity'),
             $product->Price/100
         );
-        return redirect('/cartItem')->with('message','succssfully added');
+        return redirect('/home')->with('message','succssfully added');
     }
     public function index(){
         $products = Product::all();
         $cart = Cart::content();
-        // dd($cart);
+        dd($cart);
         return view('components.Cart')->with('carts',$cart);
     }
-    public function removeCart($rowId)
+    public function removeCart(Request $request)
     {
-        Cart::remove($request->$rowId);
-        // Cart::remove($rowId);
+        Cart::remove($request->rowId);
+        session()->flash('success', 'Item Cart Remove Successfully !');
 
         return redirect('/cartItem');
     }

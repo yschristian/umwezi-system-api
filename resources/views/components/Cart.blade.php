@@ -44,7 +44,7 @@
                       <td class="">{{$cart->price}}</td>
                       <td class="">{{$cart->qty}}</td>
                       <td class="">
-                        <a class="product-remove" href="#">Remove</a>
+                        <a class="product-remove" href="/remove">Remove</a>
                       </td>
                     </tr>
                     @endforeach

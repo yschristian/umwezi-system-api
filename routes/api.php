@@ -53,3 +53,10 @@ Route::prefix('order')->group(function(){
     Route::patch("/update/{order}",[\App\Http\Controllers\orderController::class, 'update']);
     Route::get("/userOrder/{order}",[\App\Http\Controllers\orderController::class, 'UserOrder']);
 });
+//contact
+
+Route::prefix('contact')->group(function(){
+    Route::post("/create",[\App\Http\Controllers\ContactController::class, 'store']);
+    Route::get("/getAll",[\App\Http\Controllers\ContactController::class, 'index']);
+    Route::get("/getOne/{order}",[\App\Http\Controllers\ContactController::class, 'destroy']);
+});

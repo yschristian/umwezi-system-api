@@ -1,8 +1,8 @@
 @extends('components.layout')
 @section('content')
-@if(session('message'))
+<!-- @if(session('message'))
 <div>{{session("message")}}</div>
-@endif
+@endif -->
 <section class="single-product">
 	<div class="container">
 
@@ -98,11 +98,11 @@
 					<!-- url(route('cart.store') -->
                         @csrf
 						<input type="hidden" value="{{ $product->id }}" name="id">
-						<input type="hidden" value="{{ $product->Price }}" name="price">
+						<!-- <input type="hidden" value="{{ $product->Price }}" name="price"> -->
 						<div class="product-quantity">
 						<span>Quantity:</span>
 						<div class="product-quantity-slider">
-							<input id="product-quantity" type="number" value="0" name="qty">
+							<input id="product-quantity" type="number" value="1" name="qty">
 						</div>
 					 </div>
                          <button type="submit" class="btn btn-main mt-20">Add To Cart</button> 
