@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('Description');
             $table->json('Image');
             $table->string('Categories');
-            $table->string('Price');
+            $table->decimal('Price',5,2);
             $table->string('Address');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
