@@ -68,9 +68,9 @@ Route::get('/profiledetails', function () {
 Route::get('/userOrder', function () {
     return view('components.userOrder');
 });
-Route::get('/cartItem', function () {
-    return view('components.Cart');
-});
+// Route::get('/cartItem', function () {
+//     return view('components.Cart');
+// });
 // Route::POST("/cart/{id}",[\App\Http\Controllers\CartController::class,'addToCart']);
 
 Route::get("/market",[\App\Http\Controllers\ProductController::class, 'marketAll']);
@@ -86,9 +86,12 @@ Route::get('/confirmation', function () {
     return view('components.confirmation');
 });
 
-Route::get('/getcart', [\App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
+Route::get('/cartItem', [\App\Http\Controllers\CartController::class, 'index'])
+->name(name:'cart.index');
 Route::post('/cart', [\App\Http\Controllers\CartController::class, 'store'])
 ->name(name:'cart.store');
+Route::post('/remove', [CartController::class, 'removeCart'])
+->name('cart.removeCart');
 // Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
 // Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
 // Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');

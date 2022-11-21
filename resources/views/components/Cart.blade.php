@@ -28,46 +28,26 @@
                     <tr>
                       <th class="">Item Name</th>
                       <th class="">Item Price</th>
+                      <th class="">quantity</th>
                       <th class="">Actions</th>
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach($carts as $cart)
                     <tr class="">
                       <td class="">
                         <div class="product-info">
                           <img width="80" src="images/shop/cart/cart-1.jpg" alt="" />
-                          <a href="#!">Sunglass</a>
+                          <a href="#!">{{$cart->name}}</a>
                         </div>
                       </td>
-                      <td class="">$200.00</td>
+                      <td class="">{{$cart->price}}</td>
+                      <td class="">{{$cart->qty}}</td>
                       <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
+                        <a class="product-remove" href="#">Remove</a>
                       </td>
                     </tr>
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-2.jpg" alt="" />
-                          <a href="#!">Airspace</a>
-                        </div>
-                      </td>
-                      <td class="">$200.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
-                    <tr class="">
-                      <td class="">
-                        <div class="product-info">
-                          <img width="80" src="images/shop/cart/cart-3.jpg" alt="" />
-                          <a href="#!">Bingo</a>
-                        </div>
-                      </td>
-                      <td class="">$200.00</td>
-                      <td class="">
-                        <a class="product-remove" href="#!">Remove</a>
-                      </td>
-                    </tr>
+                    @endforeach
                   </tbody>
                 </table>
                 <a href="/checkout" class="btn btn-main pull-right">Checkout</a>
