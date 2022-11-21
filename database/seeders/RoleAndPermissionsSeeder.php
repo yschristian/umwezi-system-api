@@ -21,6 +21,8 @@ class RoleAndPermissionsSeeder extends Seeder
         $addUser='Add User';
         $CreateProduct = 'Create Product';
         $getAllProduct ='get product';
+        $deleteProduct='delete product';
+        $updateProduct='view product';
         $getAllUser ='get user';
         $makeOrder = 'make order';
         $getAllOrder ='get allOrder';
@@ -38,15 +40,24 @@ class RoleAndPermissionsSeeder extends Seeder
         $admin = 'admin';
         $farmer = 'farmer';
         $salesPerson= 'sales-person';
+        $clients= 'clients';
     
         Role::create(['name'=> $admin])
             ->givePermissionTo(Permission::all());
         Role::create(['name'=> $farmer])
             ->givePermissionTo([
                 $CreateProduct,
-                $getAllProduct
+                $getAllProduct,
+                $getUserOrder,
+                $makeOrder
             ]);
         Role::create(['name'=> $salesPerson])
+            ->givePermissionTo([
+                $makeOrder,
+                $getAllProduct,
+                $getUserOrder
+            ]);
+            Role::create(['name'=> $clients])
             ->givePermissionTo([
                 $makeOrder,
                 $getAllProduct,

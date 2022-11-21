@@ -37,17 +37,16 @@ Route::prefix('order')->group(function(){
     Route::get("/userOrder/{order}",[\App\Http\Controllers\orderController::class, 'UserOrder']);
 });
 
-Route::prefix('user')->group(function(){
+Route::group(['middleware'=>['auth:sanctum']], function(){
+Route::get("/user/getAll",[\App\Http\Controllers\Usercontroller::class, 'index']);
+Route::get("/user/getone/{user}",[\App\Http\Controllers\Usercontroller::class, 'show']);
+Route::patch("/user/update/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
+Route::delete("/user/delete/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
+Route::post("/user/edit/{user}",[\App\Http\Controllers\Usercontroller::class, 'edit']);
+Route::post("/user/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
+});
 
-    Route::get("/getAll",[\App\Http\Controllers\Usercontroller::class, 'index']);
-    Route::get("/getone/{user}",[\App\Http\Controllers\Usercontroller::class, 'show']);
-    Route::post("/create",[\App\Http\Controllers\Usercontroller::class, 'store']);
-    Route::patch("/update/{user}",[\App\Http\Controllers\Usercontroller::class, 'update']);
-    Route::delete("/delete/{user}",[\App\Http\Controllers\Usercontroller::class, 'destroy']);
-    Route::post("/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
-    Route::post("/edit/{user}",[\App\Http\Controllers\Usercontroller::class, 'edit']);
-    });
-
+Route::post("/user/create",[\App\Http\Controllers\Usercontroller::class, 'store']);
 //home  
 Route::get('/home', function () {
     return view('components/index');
@@ -78,7 +77,7 @@ Route::get("/singleProduct/{id}",[\App\Http\Controllers\ProductController::class
 Route::get('/contact', function () {
     return view('components.contact');
 });
-
+Route::get("/logout",[\App\Http\Controllers\Usercontroller::class,'logout']);
 Route::get('/checkout', function () {
     return view('components.checkout');
 });

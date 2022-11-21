@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 
 class Usercontroller extends Controller
@@ -16,8 +18,10 @@ class Usercontroller extends Controller
         $createUser = User::create([
             'username'=>$request->username,
             'email'=>$request->email, 
-            'password'=>Hash::make($request->password)
+            'password'=>Hash::make($request->password),
+            'role'=>'clients'
         ]);
+        // $createUser->assignRole('admin');
         return $createUser;
         // $data = [
         //     'subject'=>'Umwezi Farming System',
@@ -49,9 +53,9 @@ class Usercontroller extends Controller
     public function index(){
 
         $users = User::all();
-        // return $users;
+        return $users;
         // return response(["message"=>"all users",$users], 201);
-        return view('user')->with('users', $users);
+        // return view('user')->with('users', $users);
     }
     
     public function show($id){
