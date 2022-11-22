@@ -57,7 +57,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/contact/getAll">
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">Message</span>
 				</a>

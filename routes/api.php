@@ -57,5 +57,6 @@ Route::prefix('order')->group(function(){
 Route::prefix('contact')->group(function(){
     Route::post("/create",[\App\Http\Controllers\ContactController::class, 'store']);
     Route::get("/getAll",[\App\Http\Controllers\ContactController::class, 'index']);
-    Route::get("/getOne/{order}",[\App\Http\Controllers\ContactController::class, 'destroy']);
+    Route::get("/getOne/{contact}",[\App\Http\Controllers\ContactController::class, 'destroy']);
 });
+

@@ -11,6 +11,10 @@ Route::get('/login', function () {
     return view('login');
 });
 
+
+Route::post("/contact/create",[\App\Http\Controllers\ContactController::class, 'store']);
+Route::get("/contact/getAll",[\App\Http\Controllers\ContactController::class, 'index']);
+
 Route::prefix('product')->group(function(){
     Route::post("/create",[\App\Http\Controllers\ProductController::class, 'store']);
     Route::get("/getAll",[\App\Http\Controllers\ProductController::class, 'index']);

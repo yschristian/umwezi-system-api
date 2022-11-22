@@ -35,8 +35,8 @@ class ProductController extends Controller
 
     public function index(){
         $products = Product::all();
-        return $products;
-        // return view('product')->with('product',$products);
+        //return $products;
+        return view('product')->with('product',$products);
     }
     public function showLatest(){
         $product = Product::latest()->latest()->paginate(5);
