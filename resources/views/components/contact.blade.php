@@ -22,22 +22,22 @@
 			<div class="row">
 				<!-- Contact Form -->
 				<div class="contact-form col-md-6 " >
-					<form id="contact-form" method="post" action="" role="form">
-					
+					<form id="contact-form" action="{{url('/contact/create')}}" method="POST"  role="form">
+					{{csrf_field()}}
 						<div class="form-group">
-							<input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+							<input type="text" placeholder="Your Name" class="form-control" name="Name" id="name">
 						</div>
 						
 						<div class="form-group">
-							<input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+							<input type="email" placeholder="Your Email" class="form-control" name="Email" id="email">
 						</div>
 						
 						<div class="form-group">
-							<input type="text" placeholder="Subject" class="form-control" name="subject" id="subject">
+							<input type="text" placeholder="Subject" class="form-control" name="Subject" id="subject">
 						</div>
 						
 						<div class="form-group">
-							<textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>	
+							<textarea rows="6" placeholder="Message" class="form-control" name="Message" id="message"></textarea>	
 						</div>
 						
 						<div id="mail-success" class="success">
