@@ -25,21 +25,15 @@ class Usercontroller extends Controller
             'role'=>'admin'
         ]);
         // $createUser->assignRole('admin');
-        return $createUser;
-        // $data = [
-        //     'subject'=>'Umwezi Farming System',
-        //     'body'=>' welcome to the UFS that is home of the Farmer your account already created'
-        // ];
-        // Mail::to($fields['email'])->send(new mailer($data));
-        //  return $createUser;
-        //return view('components.signup')->with('user',$createUser);
+       
+        return redirect()->intended('/login');
     }
     public function index(){
 
         $users = User::all();
-        return $users;
+        // return $users;
         // return response(["message"=>"all users",$users], 201);
-        // return view('user')->with('users', $users);
+        return view('user')->with('users', $users);
     }
     
     public function show($id){

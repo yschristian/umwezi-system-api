@@ -12,16 +12,17 @@
           <form class="text-left clearfix" action="{{url('/user/create')}}" method="POST">
           {{csrf_field()}}
             <div class="form-group">
-              <input type="text" class="form-control"  placeholder="Username">
+              <input type="text" class="form-control"  placeholder="Username" name="username" id="Username">
             </div>
             <div class="form-group">
-              <input type="email" class="form-control"  placeholder="Email">
+        
+              <input type="email" class="form-control"  placeholder="Email"  name="email" id="Email">
             </div>
             <div class="form-group">
-              <input type="password" class="form-control"  placeholder="Password">
+              <input type="password" class="form-control"  placeholder="Password"  name="password" id="Password">
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-main text-center">Sign In</button>
+              <button type="submit" class="btn btn-main text-center" >Sign In</button>
             </div>
           </form>
           <p class="mt-20">Already hava an account ?<a href="/login"> Login</a></p>
