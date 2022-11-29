@@ -87,6 +87,9 @@ Route::get('/checkout', function () {
 Route::get('/confirmation', function () {
     return view('components.confirmation');
 });
+Route::get('/partner', function () {
+    return view('components.Partner');
+});
 
 Route::get('/cartItem', [\App\Http\Controllers\CartController::class, 'index'])
 ->name(name:'cart.index');

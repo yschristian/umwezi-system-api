@@ -24,8 +24,8 @@ class PartnerController extends Controller
             'Status'=>"pending"
         ]);
         // $partner->assignRole("admin");
-         return $partner;
-        //return view('partner')->with('partners',$partner);
+        //  return $partner;
+        return view('components.Partner')->with('partners',$partner);
     }
     public function index(){
         $partners = Partner::all();

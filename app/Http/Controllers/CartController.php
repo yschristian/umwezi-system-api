@@ -16,19 +16,21 @@ class CartController extends Controller
     { 
 
         $product = Product::findOrFail($request->input('id'));
+        // dd($product);
         Cart::add(
             $product->id, 
             $product-> Title, 
             $product-> Image,
             $request->input('quantity'),
-            $product->Price/100
+            $product->Price/100,
         );
+
         return redirect('/home')->with('message','succssfully added');
     }
     public function index(){
         $products = Product::all();
         $cart = Cart::content();
-        dd($cart);
+        //dd($cart);
         return view('components.Cart')->with('carts',$cart);
     }
     public function removeCart(Request $request)

@@ -136,6 +136,9 @@
 						<a href="/logout">Log Out</a>
 					</li>
 				@endif		
+				<li class="dropdown ">
+						<a href="/partner">Partner</a>
+					</li>
 					<!-- Elements -->
 					<li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
@@ -159,28 +162,6 @@
 							</div><!-- / .row -->
 						</div><!-- / .dropdown-menu -->
 					</li><!-- / Elements -->
-
-
-					<!-- Pages -->
-					<li class="dropdown dropdown-slide">
-						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
-							role="button" aria-haspopup="true" aria-expanded="false">Categories <span
-								class="tf-ion-ios-arrow-down"></span></a>
-						<div class="dropdown-menu">
-							<div class="row">
-
-								<!-- Introduction -->
-								<!-- <div class="col-sm-3 col-xs-12">
-									<ul>
-										<li role="separator" class="divider"></li>
-										<li><a href="#">Vegetables</a></li>
-										<li><a href="#">Fruits</a></li>
-                                        <li><a href="#">Rice</a></li>
-									</ul>
-								</div> -->
-							</div>
-						</div>
-					</li>
 			</div>
 		</div>
 	</nav>
