@@ -51,8 +51,13 @@
                     @endforeach
                   </tbody>
                 </table>
+                @if(auth()->user())
                 <a href="/checkouts" class="btn btn-main pull-right">Checkout</a>
-                
+                @endif	
+                      @if(!auth()->user())
+                  <a class="btn btn-main pull-right" href="/login">LOGIN to check out</a>
+              
+                @endif
               </form>
             </div>
           </div>
