@@ -61,12 +61,21 @@ class PartnerController extends Controller
     }
     public function approve($id){
         $patner = Partner::find($id);
+        $patner->Status="Approved";
+        $patner->save();
+
         $hashed_random_password = Hash::make(str::random(8));
             $user = User::create([
                 "username" => $patner ->FirstName,
                 "email" => $patner ->Email,
                 "password"=>$hashed_random_password,
+                "role"=>$patner->Option
             ]);
+            $createUser->assignRole('Manager');
+            $data = [
+                'subject'=>'UMWEZI FARMING',
+                'body'=> 'you are approved now you are partner!'
+            ];
             return response(["message"=>"user approved",$user], 201);   
     }
 
