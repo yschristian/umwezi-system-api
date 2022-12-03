@@ -139,6 +139,11 @@
 				<li class="dropdown ">
 						<a href="/partner">Partner</a>
 					</li>
+					@if(auth()->user())
+					<li class="dropdown ">
+						<a href="/userdashboard">Profile</a>
+					</li>
+					@endif	
 					<!-- Elements -->
 					<li class="dropdown dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
@@ -150,13 +155,10 @@
 								<!-- Basic -->
 								<div class="col-lg-6 col-md-6 mb-sm-3">
 									<ul>
-										<!-- <li class="dropdown-header">Pages</li> -->
 										<li role="separator" class="divider"></li>
 										<li><a href="/market">Market</a></li>
-										<!-- <li><a href="/checkout">Checkout</a></li> -->
 										<li><a href="/cartItem">Cart</a></li>
-										<!-- <li><a href="pricing.html">Pricing</a></li> -->
-										<!-- <li><a href="/confirmation">Confirmation</a></li> -->
+					
 									</ul>
 								</div>
 							</div><!-- / .row -->

@@ -52,6 +52,7 @@
                   </tbody>
                 </table>
                 <a href="/checkouts" class="btn btn-main pull-right">Checkout</a>
+                
               </form>
             </div>
           </div>

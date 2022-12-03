@@ -16,6 +16,7 @@
 		</div>
 	</div>
 </section>
+
 <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default credit-card-box">
@@ -30,7 +31,7 @@
                             <p>{{ Session::get('success') }}</p>
                         </div>
                     @endif
-    
+                    
                     <form 
                             role="form" 
                             action="/checkout" 
@@ -87,10 +88,17 @@
                                     again.</div>
                             </div>
                         </div>
-    
+                     <div class="form-group">
+                        <label for="full_name">userid</label>
+                        <input type="text" class="form-control" id="full_name" name="username" placeholder="" value="{{auth()->user()->username}}" readonly>
+                     </div>
+                     <div class="form-group">
+                        <label for="user_address">product</label>
+                        <input type="text" class="form-control" name="cart[]" id="user_address" name="id" placeholder="" value="{{$carts}}">
+                     </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now {{$total}}</button>
                             </div>
                         </div>
                             
@@ -98,7 +106,7 @@
                 </div>
             </div>        
         </div>
-       <div class="col-md-4">
+       <div class="col-md-4" style="margin-left: 500px;  ">
                <div class="product-checkout-details">
                   <div class="block">
                      <h4 class="widget-title">Order Summary</h4>
@@ -113,15 +121,34 @@
                            <span class="remove" >Remove</span>
                         </div>
                      </div>
+                     
                      @endforeach
+                    
+                     <!-- <div class="checkout-country-code clearfix">
+                        <div class="form-group">
+                           <label for="user_post_code">quantity</label>
+                           <input type="text" class="form-control" id="user_post_code" name="quantity" value="{{$cart->qty}}">
+                        </div>
+                        <div class="form-group" >
+                           <label for="user_city">amount</label>
+                           <input type="text" class="form-control" id="user_city" name="amount" value="{{$total}}">
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="user_country">status</label>
+                        <input type="text" class="form-control" id="user_country" placeholder="">
+                     </div> -->
+                     <a href="" class="btn btn-main mt-20" type="submit">Place Order</a >
+                  </form>
+                     
                      <!-- <div class="discount-code">
                         <p>Have a discount ? <a data-toggle="modal" data-target="#coupon-modal" href="#!">enter it here</a></p>
                      </div> -->
+                     
+                     <!-- <div class="verified-icon">
+                        <img src="images/shop/verified.png">
+                     </div> -->
                      <ul class="summary-prices">
-                        <!-- <li>
-                           <span>Subtotal:</span>
-                           <span class="price">$190</span>
-                        </li> -->
                         <li>
                            <span>Shipping:</span>
                            <span>Free</span>
@@ -131,9 +158,7 @@
                         <span>Total</span>
                         <span>{{$total}}</span>
                      </div>
-                     <!-- <div class="verified-icon">
-                        <img src="images/shop/verified.png">
-                     </div> -->
+   
                   </div>
                </div>
             </div>
