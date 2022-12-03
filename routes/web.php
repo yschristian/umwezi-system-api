@@ -81,12 +81,11 @@ Route::get('/contact', function () {
     return view('components.contact');
 });
 Route::get("/logout",[\App\Http\Controllers\Usercontroller::class,'logout']);
-Route::get('/checkout', function () {
-    return view('components.checkout');
-});
+Route::post('/checkout',[\App\Http\Controllers\StripePaymentController::class,'stripePost']);
 Route::get('/confirmation', function () {
     return view('components.confirmation');
 });
+Route::get('/checkouts',[\App\Http\Controllers\StripePaymentController::class,'stripe'] );
 Route::get('/partner', function () {
     return view('components.Partner');
 });
