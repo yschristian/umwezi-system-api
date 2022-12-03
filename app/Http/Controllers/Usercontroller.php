@@ -10,6 +10,8 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Mail\mailer;
+use Illuminate\Support\Facades\Mail;
 
 
 
@@ -24,8 +26,12 @@ class Usercontroller extends Controller
             'password'=>Hash::make($request->password),
             'role'=>'admin'
         ]);
-        // $createUser->assignRole('admin');
-       
+        
+        $data = [
+            'subject'=>'UMWEZI FARMING',
+            'body'=> 'account created successfully!'
+        ];
+        Mail::to($request['email'])->send(new mailer($data));
         return redirect()->intended('/login');
     }
     public function index(){
