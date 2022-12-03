@@ -33,7 +33,7 @@ Route::prefix('request')->group(function(){
     
 });
 Route::prefix('order')->group(function(){
-    Route::post("/create",[\App\Http\Controllers\orderController::class, 'store']);
+    Route::post("/create",[\App\Http\Controllers\StripePaymentController::class, 'store']);
     Route::get("/getAll",[\App\Http\Controllers\orderController::class, 'index']);
     Route::get("/getOne/{order}",[\App\Http\Controllers\orderController::class, 'show']);
     Route::delete("/delete/{order}",[\App\Http\Controllers\orderController::class, 'destroy']);
@@ -99,3 +99,7 @@ Route::post('/remove', [\App\Http\Controllers\CartController::class, 'removeCart
 // Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
 // Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
 // Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+
+Route::get('/order', function () {
+    return view('components.Order');
+});
