@@ -35,13 +35,14 @@
                   <tbody>
                     @foreach($carts as $cart)
                     <tr class="">
-                      <td class="">
+                      <!-- <td class=""> -->
                         <!-- <div class="product-info">
                           <img width="80" src="images/shop/cart/cart-1.jpg" alt="" />
                           <a href="#!">{{$cart->name}}</a>
                         </div> -->
-                      </td>
-                      <td class="">{{$cart->Price}}</td>
+                      <!-- </td> -->
+                      <td class="">{{$cart->name}}</td>
+                      <td class="">{{$cart->price}}</td>
                       <td class="">{{$cart->qty}}</td>
                       <td class="">
                         <a class="product-remove" href="/remove">Remove</a>

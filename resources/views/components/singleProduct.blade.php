@@ -91,7 +91,7 @@
 					<div class="product-category">
 						<span>Categories:</span>
 						<ul>
-							<li><a href="product-single.html">{{$product -> Categories}}</a></li>
+							<li><a >{{$product -> Categories}}</a></li>
 						</ul>
 					</div>
 					<form action="{{url('/cart')}}" method="POST" enctype="multipart/form-data">
