@@ -24,7 +24,7 @@ class Usercontroller extends Controller
             'username'=>$request->username,
             'email'=>$request->email, 
             'password'=>Hash::make($request->password),
-            'role'=>'admin'
+            'role'=>'clients'
         ]);
         
         $data = [

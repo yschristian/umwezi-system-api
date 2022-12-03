@@ -18,7 +18,7 @@ class OrderController extends Controller
             'status' => $request -> status
         ]);
         return $createOrder;
-        // return view('order')->with('order', $createOrder);
+        // return view('components.checkout')->with('order', $createOrder);
     }
 
     public function index(){

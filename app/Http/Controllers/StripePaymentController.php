@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Models\Product;
+use App\Models\Order;
 use Session;
 use Stripe;
      
@@ -39,9 +40,35 @@ class StripePaymentController extends Controller
                 "source" => $request->stripeToken,
                 "description" => "Test payment from itsolutionstuff.com." 
         ]);
-      
-        Session::flash('success', 'Payment successful!');
-              
+        // $createOrder = Order::create([
+        //     'user_id'=>$request->user_id,
+        //     'product_id'=> $request-> product_id,
+        //     'quantity'=>$request->quantity,
+        //     'amount'=>$request->amount,
+        //     'address'=>$request->address,
+        //     'status' => $request -> status
+        // ]);
+        // Session::flash('success', 'Payment successful!');
+         $carts = $request->cart;
+         foreach($carts as $cart)
+           {
+            dd($cart['id']);
+
+           }
+        
         return back();
     }
+    // public function store(Request $request)
+    // {
+    //     $createOrder = Order::create([
+    //         'user_id'=>$request->user_id,
+    //         'product_id'=> $request-> product_id,
+    //         'quantity'=>$request->quantity,
+    //         'amount'=>$request->amount,
+    //         'address'=>$request->address,
+    //         'status' => $request -> status
+    //     ]);
+    //     return $createOrder;
+    //     // return view('components.checkout')->with('order', $createOrder);
+    // }
 }
