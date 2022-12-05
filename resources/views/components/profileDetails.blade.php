@@ -33,11 +33,11 @@
             </div>
             <div class="media-body">
               <ul class="user-profile-list">
-                <li><span>Full Name:</span>Johanna Doe</li>
-                <li><span>Country:</span>USA</li>
-                <li><span>Email:</span>mail@gmail.com</li>
-                <li><span>Phone:</span>+880123123</li>
-                <li><span>Date of Birth:</span>Dec , 22 ,1991</li>
+                <li><span>Full Name:</span>chris</li>
+                <li><span>city:</span>kigali</li>
+                <li><span>Email:</span>yegokowe@gmail.com</li>
+                <!-- <li><span>Phone:</span>+880123123</li>
+                <li><span>Date of Birth:</span>Dec , 22 ,1991</li> -->
               </ul>
             </div>
           </div>
