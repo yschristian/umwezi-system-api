@@ -38,7 +38,7 @@ Route::prefix('order')->group(function(){
     Route::get("/getOne/{order}",[\App\Http\Controllers\orderController::class, 'show']);
     Route::delete("/delete/{order}",[\App\Http\Controllers\orderController::class, 'destroy']);
     Route::patch("/update/{order}",[\App\Http\Controllers\orderController::class, 'update']);
-    Route::get("/userOrder/{order}",[\App\Http\Controllers\orderController::class, 'UserOrder']);
+    Route::get("/userOrder",[\App\Http\Controllers\orderController::class, 'UserOrder']);
 });
 
 Route::group(['middleware'=>['auth:sanctum']], function(){
@@ -67,9 +67,10 @@ Route::get('/userdashboard', function () {
 Route::get('/profiledetails', function () {
     return view('components.profileDetails');
 });
-Route::get('/userOrder', function () {
-    return view('components.userOrder');
-});
+Route::get("/userOrder",[\App\Http\Controllers\orderController::class, 'UserOrder']);
+// Route::get('/userOrder', function () {
+//     return view('components.userOrder');
+// });
 // Route::get('/cartItem', function () {
 //     return view('components.Cart');
 // });

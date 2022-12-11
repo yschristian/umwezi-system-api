@@ -50,7 +50,7 @@ Route::prefix('order')->group(function(){
     Route::get("/getOne/{order}",[\App\Http\Controllers\orderController::class, 'show']);
     Route::delete("/delete/{order}",[\App\Http\Controllers\orderController::class, 'destroy']);
     Route::patch("/update/{order}",[\App\Http\Controllers\orderController::class, 'update']);
-    Route::get("/userOrder/{order}",[\App\Http\Controllers\orderController::class, 'UserOrder']);
+    Route::get("/UserOrder/{order}",[\App\Http\Controllers\orderController::class, 'UserOrder']);
 });
 //contact
 

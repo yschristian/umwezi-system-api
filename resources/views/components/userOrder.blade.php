@@ -30,56 +30,34 @@
 					<div class="table-responsive">
 						<table class="table">
 							<thead>
-								<tr>
-									<th>Order ID</th>
-									<th>Date</th>
-									<th>Items</th>
-									<th>Total Price</th>
-									<th>Status</th>
-									<th></th>
-								</tr>
+							<tr>
+								<th>User</th>
+								<th>Product</th>
+								<th>Quantity</th>
+                                <th>amount</th>
+                                <!-- <th>Address</th> -->
+								<th>Date</th>
+                                <th>Status</th>
+								<th>Action</th>
+							</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>#451231</td>
-									<td>Mar 25, 2016</td>
-									<td>2</td>
-									<td>$99.00</td>
-									<td><span class="label label-primary">Processing</span></td>
-									<td><a href="order.html" class="btn btn-default">View</a></td>
-								</tr>
-								<tr>
-									<td>#451231</td>
-									<td>Mar 25, 2016</td>
-									<td>3</td>
-									<td>$150.00</td>
-									<td><span class="label label-success">Completed</span></td>
-									<td><a href="order.html" class="btn btn-default">View</a></td>
-								</tr>
-								<tr>
-									<td>#451231</td>
-									<td>Mar 25, 2016</td>
-									<td>3</td>
-									<td>$150.00</td>
-									<td><span class="label label-danger">Canceled</span></td>
-									<td><a href="order.html" class="btn btn-default">View</a></td>
-								</tr>
-								<tr>
-									<td>#451231</td>
-									<td>Mar 25, 2016</td>
-									<td>2</td>
-									<td>$99.00</td>
-									<td><span class="label label-info">On Hold</span></td>
-									<td><a href="order.html" class="btn btn-default">View</a></td>
-								</tr>
-								<tr>
-									<td>#451231</td>
-									<td>Mar 25, 2016</td>
-									<td>3</td>
-									<td>$150.00</td>
-									<td><span class="label label-warning">Pending</span></td>
-									<td><a href="order.html" class="btn btn-default">View</a></td>
-								</tr>
+							@foreach($orders as $order )
+							<tr>
+								<!-- <td>Yubahwe</td> -->
+								<td>{{Auth()->user()->username}}</td>
+								<td>{{$order ->product->Title}}</td>
+								<td>{{$order ->quantity}}</td>
+                                <td>{{$order ->amount}}</td>
+                                <!-- <td>{{$order ->address}}</td> -->
+								<td>{{$order ->created_at}}</td>
+                                <td>{{$order ->status}}</td>
+								<td>
+									<a href="#" class="btn">view</a>
+									<a href="#" class="btn">delete</a>
+								</td>
+							</tr>
+							@endforeach
 							</tbody>
 						</table>
 					</div>

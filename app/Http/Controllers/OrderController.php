@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     public function store(Request $request)
@@ -44,11 +45,8 @@ class OrderController extends Controller
         $order-> update($input);
         return $order;
     }
-    public function UserOrder($userId){
-        $orders = User::find($userId)-> orders;
-        foreach($orders as $order){
-            $orders = Order::all();
-            return $orders;
-          }
+    public function UserOrder(){
+        $orders = Order::where('user_id',Auth::user()->id)->get();
+        return view('components.userOrder')->with('orders',$orders);
     }
 }
