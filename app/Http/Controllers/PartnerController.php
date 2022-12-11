@@ -9,6 +9,8 @@ use App\Models\User;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Str;
+use App\Mail\mailer;
+use Illuminate\Support\Facades\Mail;
 
 class PartnerController extends Controller
 {
@@ -25,6 +27,11 @@ class PartnerController extends Controller
         ]);
         // $partner->assignRole("admin");
         //  return $partner;
+        $data = [
+            'subject'=>'UMWEZI FARMING',
+            'body'=> 'your request well received we will comeback for you!'
+        ];
+        Mail::to($request['Email'])->send(new mailer($data));
         return view('components.Partner')->with('partners',$partner);
     }
     public function index(){
@@ -50,7 +57,7 @@ class PartnerController extends Controller
     public function destroy($id){
         $patner = Partner::destroy($id);
         // return $patner;
-        return view('partner')->with('partners',$patner);
+        return redirect('/request/getAll');
     }
 
     public function update(Request $request,$id){
@@ -71,12 +78,12 @@ class PartnerController extends Controller
                 "password"=>$hashed_random_password,
                 "role"=>$patner->Option
             ]);
-            $createUser->assignRole('Manager');
+            $user->assignRole($patner->Option);
             $data = [
                 'subject'=>'UMWEZI FARMING',
                 'body'=> 'you are approved now you are partner!'
             ];
-            return response(["message"=>"user approved",$user], 201);   
+            return view('partner')->with('partners',$patner);   
     }
 
 }

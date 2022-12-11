@@ -49,12 +49,18 @@ class StripePaymentController extends Controller
         //     'status' => $request -> status
         // ]);
         // Session::flash('success', 'Payment successful!');
-         $carts = $request->cart;
-         foreach($carts as $cart)
-           {
-            dd($cart['id']);
-
-           }
+        $cart = Cart::content();
+        // $carts = $cart->name;
+            foreach($cart as $cart){
+                $createOrder = Order::create([
+                    'user_id'=>Auth()->user()->id,
+                    'product_id'=> $cart->id,
+                    'quantity'=>$cart->qty,
+                    'amount'=>$cart->qty*$cart->price,
+                    'address'=>'kigali',
+                    'status' => 'pending'
+                ]);
+            }
         
         return back();
     }

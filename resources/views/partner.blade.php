@@ -71,12 +71,16 @@
 								<td>{{$partner -> Status}}</td>
 								<td style="display: flex ">
 								<a href="{{url('/request/getOne/'.$partner->id)}}" class="btn">View</a>
-								<a href="{{url('/request/getOne/'.$partner->id)}}" class="btn">accept</a>
-									<form method="POST" action="{{url('/request/delete/'.$partner->id)}}">
+								<form method="POST" action="{{url('/request/approve/'.$partner->id)}}"  style="display:inline">
+								{{csrf_field()}}
+									<button style="border: none; cursor:pointer" class="btn">accept</button>
+								</form>
+									<form method="POST" action="{{url('/request/delete/'.$partner->id)}}"  style="display:inline">
 										{{csrf_field()}}
 										@method("DELETE")
 										<button  style="border: none; cursor:pointer" class="btn">delete</button>
 									</form>
+									
 								</td>
 							</tr>
 							@endforeach

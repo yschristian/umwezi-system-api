@@ -25,7 +25,7 @@ class CartController extends Controller
         );
        
     
-        return redirect('/home')->with('message','succssfully added');
+        return redirect('/')->with('message','succssfully added');
     }
     public function index(){
         $products = Product::all();

@@ -88,14 +88,14 @@
                                     again.</div>
                             </div>
                         </div>
-                     <div class="form-group">
+                     <!-- <div class="form-group">
                         <label for="full_name">userid</label>
                         <input type="text" class="form-control" id="full_name" name="username" placeholder="" value="{{auth()->user()->username}}" readonly>
-                     </div>
-                     <div class="form-group">
+                     </div> -->
+                     <!-- <div class="form-group">
                         <label for="user_address">product</label>
                         <input type="text" class="form-control" name="cart[]" id="user_address" name="id" placeholder="" value="{{$carts}}">
-                     </div>
+                     </div> -->
                         <div class="row">
                             <div class="col-xs-12">
                                 <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now {{$total}}</button>
@@ -138,7 +138,7 @@
                         <label for="user_country">status</label>
                         <input type="text" class="form-control" id="user_country" placeholder="">
                      </div> -->
-                     <a href="" class="btn btn-main mt-20" type="submit">Place Order</a >
+                     <!-- <a href="" class="btn btn-main mt-20" type="submit">Place Order</a > -->
                   </form>
                      
                      <!-- <div class="discount-code">
