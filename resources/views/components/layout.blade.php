@@ -124,7 +124,7 @@
 
 					<!-- Home -->
 					<li class="dropdown ">
-						<a href="/home">Home</a>
+						<a href="/">Home</a>
 					</li><!-- / Home -->
 			@if(!auth()->user())
                     <li class="dropdown ">

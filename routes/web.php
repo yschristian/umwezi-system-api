@@ -51,7 +51,7 @@ Route::post("/user/edit/{user}",[\App\Http\Controllers\Usercontroller::class, 'e
 Route::post("/user/login",[\App\Http\Controllers\Usercontroller::class, 'login']);
 Route::post("/user/create",[\App\Http\Controllers\Usercontroller::class, 'store']);
 //home  
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('components/index');
 });
 

@@ -7,7 +7,7 @@
 				<div class="content">
 					<h1 class="page-name">Dashboard</h1>
 					<ol class="breadcrumb">
-						<li><a href="/home">Home</a></li>
+						<li><a href="/">Home</a></li>
 						<li class="active">my account</li>
 					</ol>
 				</div>
@@ -24,7 +24,7 @@
 				<ul class="list-inline dashboard-menu text-center">
 					<li><a class="active" href="/userdashboard">Dashboard</a></li>
 					<li><a href="/userOrder">Orders</a></li>
-					<li><a href="address.html">Address</a></li>
+					<!-- <li><a href="address.html">Address</a></li> -->
 					<li><a href="/profiledetails">Profile Details</a></li>
 				</ul>
 				<div class="dashboard-wrapper user-dashboard">

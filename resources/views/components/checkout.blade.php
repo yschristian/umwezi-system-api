@@ -8,7 +8,7 @@
 				<div class="content">
 					<h1 class="page-name">Checkout</h1>
 					<ol class="breadcrumb">
-						<li><a href="/home">Home</a></li>
+						<li><a href="/">Home</a></li>
 						<li class="active">checkout</li>
 					</ol>
 				</div>
