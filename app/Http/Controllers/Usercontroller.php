@@ -81,7 +81,7 @@ class Usercontroller extends Controller
         }
         else if(Auth::attempt($credentials))
           {
-            return redirect()->intended('/');
+            return redirect()->intended('/dashboard');
             }
       else{
         return back()->withErrors([

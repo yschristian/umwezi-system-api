@@ -23,17 +23,17 @@
 			</div>
 
 			<ul class="box-info">
-				<li>
+			<li>
 					<i class='bx bxs-calendar-check' ></i>
 					<span class="text">
-						<h3>20</h3>
+						<h3>{{ \App\Models\Order::all()->count() }}</h3>
 						<p>Orders</p>
 					</span>
 				</li>
 				<li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
-						<h3>10</h3>
+						<h3>{{ \App\Models\User::all()->count() }}</h3>
 						<p>Users</p>
 					</span>
 				</li>
