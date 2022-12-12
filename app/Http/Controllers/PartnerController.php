@@ -29,7 +29,9 @@ class PartnerController extends Controller
         //  return $partner;
         $data = [
             'subject'=>'UMWEZI FARMING',
-            'body'=> 'your request well received we will comeback for you!'
+            'body'=> 'your request is well received !!! thank u for trust us and your patient  ,the proved message is 
+            coming soon  . 
+            your sincerely faithful '
         ];
         Mail::to($request['Email'])->send(new mailer($data));
         return view('components.Partner')->with('partners',$partner);
@@ -81,7 +83,9 @@ class PartnerController extends Controller
             $user->assignRole($patner->Option);
             $data = [
                 'subject'=>'UMWEZI FARMING',
-                'body'=> 'you are approved now you are partner!'
+                'body'=> `you are approved now you are partner! 
+                We trusted company to make purchase more easy 
+                hope we are going to work together in good way `
             ];
             return view('partner')->with('partners',$patner);   
     }

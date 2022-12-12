@@ -29,7 +29,8 @@ class Usercontroller extends Controller
         
         $data = [
             'subject'=>'UMWEZI FARMING',
-            'body'=> 'account created successfully!'
+            'body'=> 'account created successfully! Thank you for trusting and  accept working with us ,
+           This trusted company . we are waiting to make purchasing working smooth '
         ];
         Mail::to($request['email'])->send(new mailer($data));
         return redirect()->intended('/login');

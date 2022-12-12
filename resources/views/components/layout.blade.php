@@ -136,9 +136,11 @@
 						<a href="/logout">Log Out</a>
 					</li>
 				@endif		
+				@if(!auth()->user())
 				<li class="dropdown ">
 						<a href="/partner">Partner</a>
 					</li>
+					@endif
 					@if(auth()->user())
 					<li class="dropdown ">
 						<a href="/userdashboard">Profile</a>
