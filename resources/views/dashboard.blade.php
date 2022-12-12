@@ -31,13 +31,13 @@
 						<p>Users</p>
 					</span>
 				</li>
-				<li>
+				<!-- <li>
 					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
 						<h3>$25</h3>
 						<p>Sales</p>
 					</span>
-				</li>
+				</li> -->
 			</ul>
 
 
